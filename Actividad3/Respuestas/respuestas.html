@@ -5,21 +5,22 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Actividad 3</title>
     <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
-    <link rel ="stylesheet" type = " text/css " href ="css/styles.css" media =" screen ">
+    <link rel ="stylesheet" type = "text/css " href ="css/styles.css" media =" screen ">
+    <link rel="stylesheet" href="css/animations.css">
     <link rel="Shortcut Icon" href="images/dog.svg">
 </head>
 <body>
-    <header>
+    <header class="fadeInDown">
         <div class="title-container">
-            <a href="https://ips.edu.ar/">
+            <a href="https://ips.edu.ar/" target="_blank">
                 <img src="images/IPS_Logo.png" alt="IPS-logo">
             </a>
-            <h1>Actividad 3</h1>
+            <h1 style="color: white;">Actividad 3</h1>
         </div>
         <div class="links">
             <div class="img-container">
-                <a href="../index.html">                
-                    <img src="images/form.png" alt="formulario">
+                <a href="../index.html">
+                    <img src="images/form.png" alt="">                
                     <h6>Formulario</h6>
                 </a>
             </div>
@@ -37,82 +38,163 @@
             </div>
         </div>
     </header>
-    <body>
-        <div class="w3-panel">
-            <div class="w3-container">
-            <div class="w3-card-4">
-                <div class="w3-container w3-black">
-                <h2>Input Form</h2>
-                </div>
-            <div class="w3-container w3-Sand w3-padding">    
-            <form id="registro" name="registro">    
-                <div class="w3-row">
-                <div class="w3-container w3-half w3-padding">
-           
-                    <div class="w3-group">
-                        <label class="w3-label">Apellido</label>
-                        <input class="w3-input" type="text" name="apellido">
-                    </div>
-
-                    <div class="w3-group">
-                        <label>Nombres</label>
-                        <input class="w3-input" type="text" name="nombre">
-                    </div>
-                    
-                    <div class="w3-group">
-                        <label>E-Mail</label>
-                        <input class="w3-input" type="email" name="email">
-                    </div>
-                    
-                    <div class="w3-group">
-                        <label>WhatsApp</label>
-                        <input class="w3-input" type="tel" name="telefono">
-                    </div>
-                    
-                    <div class="w3-group">
-                        <label>Contrase&ntilde;a</label>
-                        <input class="w3-input" type="password" name="clave">
-                    </div>
-
-                    <div class="w3-group">
-                        <label>Contrase&ntilde;a</label>
-                        <input class="w3-input" type="password" name="clave">
-                    </div>
-
-                    <div class="w3-group">
-                        <label class="w3-label">Apellido</label>
-                        <input class="w3-input" type="text" name="apellido">
-                    </div>
-
-                    <div class="w3-group">
-                        <label class="w3-label">Apellido</label>
-                        <input class="w3-input" type="text" name="apellido">
-                    </div>
-
-                    <div class="w3-group">
-                        <label class="w3-label">Apellido</label>
-                        <input class="w3-input" type="text" name="apellido">
-                    </div>
-
-                    
-                </div>
-                <div class="w3-container w3-center w3-padding">
-                    <button class="w3-button w3-blue w3-padding" type="submit" name="enviar" id="registro_enviar">Enviar</button>
-                </div>
-                </div>
-            </form>
-            
+    <main>
+        <div class="form-title">
+            <h1>Ficha Médica</h1>
+        <div class="form-body">
+            <!-- Nombre -->
+            <div class="nombre">
+                <h3>Nombre</h3>
+                <input type="text" style="grid-area: nombre;" placeholder="Tu nombre...">
             </div>
+            <!-- Apellido -->
+            <div class="apellido" style="grid-area: apellido;">
+                <h3>Apellido</h3>
+                <input type="text" placeholder="Tu apellido...">
             </div>
+            <!-- Edad -->
+            <div class="fecha" style="grid-area: fecha;">
+                <h3>Fecha de Nacimiento</h3>
+                <input type="date" id="fecha_nacimien" name="fecha_nacimien">
             </div>
-        </div>
-    
-    </body>
-    <footer class = "footer"> 
-        <li><h3>Co Santiago</h3></li>
-        <li><h3>Consolati Juliana</h3></li>
-        <li><h3>Gozzerino Franco</h3></li>
+            <!-- DNI -->
+            <div class="dni" style="grid-area: dni;">
+                <h3>DNI</h3>
+                <input type="text" placeholder="Tu DNI..">
+            </div>
+            <!-- Domicilio -->
+            <div class="domic" style="grid-area: domic;">
+                <h3>Domicilio</h3>
+                <input type="text" placeholder="Tu domicilio..">
+            </div>
+            <!-- Emergencia -->
+            <div class="emerg" style="grid-area: emerg;">
+                <h3>¿Esta afiliado a un servicio de emergencia?</h3>
+                <div class="radio-input">
+                    <input type="radio" id="si" name="emerg"  onclick="radioEvent(this.form);" style="grid-area: radio-input-si;"/>
+                    <label for="si" style="grid-area: radio-si;">S&Iacute;</label><br>
+                    <input type="radio" id="no" name="emerg" style="grid-area: radio-input-no;"/>
+                    <label for="no" style="grid-area: radio-no;">No</label><br>
+                    <Input placeholder="Cu&aacute;l?" style="grid-area: radio-input-cual;"></Input>
+                </div>
+            </div>
+            <!-- Obra Social -->
+            <div class="obra" style="grid-area: obra;">
+                <h3>¿Esta afiliado a una Obra Social?</h3>
+                <div class="radio-input">
+                    <input type="radio" id="si" style="grid-area: radio-input-si"/>
+                    <label for="si" style="grid-area: radio-si;">S&Iacute;</label><br>
+                    <input type="radio" id="no" name="obra" style="grid-area: radio-input-no;"/>
+                    <label for="no" style="grid-area: radio-no;">No</label><br>
+                    <Input type="text" placeholder="Cu&aacute;l?" style="grid-area: radio-input-cual;"></Input>
+                </div>
+            </div>
+            <!-- Grupo Sanguinio -->
+            <div class="grupo" style="grid-area: grupo;">
+                <h3>Grupo Sangineo</h3>
+                <div class="select">
+                <select name="select">
+                    <option value="none" selected disabled hidden> 
+                        Seleccione una opción 
+                    </option> 
+                    <option value="value1">A </option> 
+                    <option value="value2">AB</option> 
+                    <option value="value3">0</option>
+                    <option value="value4">B</option>
+                </select>
+                </div>
+            </div>
+            <!-- Factor Sanguinio -->
+            <div class="factor" style="grid-area: factor;">
+                <h3>Factor Sanguineo</h3>
+                <div class="select">
+                    <select name="select">
+                        <option value="none" selected disabled hidden> 
+                            Seleccione una opcion
+                        </option> 
+                        <option value="value1"> + </option> 
+                        <option value="value2"> - </option> 
+                    </select>
+                    </div>
+            </div>
+            <!-- Peso Corporal -->
+            <div class="peso" style="grid-area: peso;">
+                <h3>Peso Corporal (rango entre 0kg y 300kg)</h3>
+                <input type="number" id="quantity" name="peso" min="0" max="300" step="1" value="0" style="margin: 0; padding: 4px; color: white;">
+            </div>
+            <!-- Altura -->
+            <div class="altura" style="grid-area: altura;">
+                <h3>Altura (rango entre 0cm y 200cm)</h3>
+                <div class="range-wrap">
+                <input type="range" class="range" id="vol" name="altura" min="0" max="200" value="0">
+                <output class="bubble"></output>
+                </div>
+            </div>
+            <!-- Enfermedades -->
+            <div class="alergias" style="grid-area: alergias;">
+                <h3>Cuales de estas enfermedades ha padecido?</h3>
+                <div class="checkbox-input">
+                    <input type="checkbox" id="coronavirus" name="coronavirus">
+                    <label for="coronavirus">Coronavirus</label><br>
+                    <input type="checkbox" id="Sida" name="Sida">
+                    <label for="Sida">Sida</label><br>
+                    <input type="checkbox" id="Otaku" name="Otaku">
+                    <label for="Otaku">Otaku</label>
+                    <input type="checkbox" id="ninguna" name="ninguna">
+                    <label for="ninguna">Ninguna</label>
+                </div>
+            </div>
+            <!-- Medicamentos -->
+            <div class="meds" style="grid-area: meds;">
+                <h3>¿Toma un medicamento en forma regular?</h3>
+                <div class="radio-input">
+                    <input type="radio" id="si" name="emerg" style="grid-area: radio-input-si;">
+                    <label for="si" style="grid-area: radio-si;">S&Iacute;</label><br>
+                    <input type="radio" id="no" name="emerg" style="grid-area: radio-input-no;">
+                    <label for="no " style="grid-area: radio-no;">No</label><br>
+                    <Input placeholder="Cu&aacute;l?" style="grid-area: radio-input-cual;"></Input>
+                </div>
+            </div>
+            <!-- Celular Personal-->
+            <div class="cel" style="grid-area: cel;">
+                <h3>Numero de Celular</h3>
+                <input type="tel" id="phone" name="cel" placeholder="123-456-7890" pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}" required><br><br>
+            </div>
+            <!-- Telefono Fijo -->
+            <div class="tel" style="grid-area: tel;">
+                <h3>Telefono Fijo</h3>
+                <input type="tel" id="phone" name="tel" placeholder="123-456-7890" pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}" required><br><br>
+            </div>
+            <!-- Email -->
+            <div class="email" style="grid-area: email;">
+                <h3>Email</h3>
+                <input type="email" id="email" name="email" placeholder="Tu email">
+            </div>
+            <!-- Telefono Alternativo -->
+            <div class="tel-alt" style="grid-area: tel-alt;">
+                <h3>Telefono Alternativo</h3>
+                <input type="tel" id="phone" name="tel-alt" placeholder="123-456-7890" pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}" required><br><br>
+            </div>
+            <!-- Foto de Cara -->
+            <div class="cara" style="grid-area: cara;">
+                <h3>Por favor ingrese una foto sobre su rostro</h3>
+                <input type="file" id="myfile" name="myfile" style="margin: 0; padding: 9px;">
+            </div>
+            <!-- Color favorito -->
+            <div class="color" style="grid-area: color;">
+                <h3>Color de calzon</h3>
+                <input type="color" id="favcolor" name="favcolor" value="#95C923" style="height: 35px; margin-top: 0; padding-top: 0;">
+            </div>
+            <!-- Talle de Zapato -->
+            <div class="zapato" style="grid-area: zapato;">
+                <h3>Talle de Zapato</h3>
+                <input type="number" id="quantity" name="zapato" min="0" max="50" step="1" value="0" style="margin: 0; padding: 4px; color: white;">
+            </div>
+    </main>
+    <footer>
+        <h3>Santiago C&oacute;</h3>
+        <h3>Franco Gozzerino</h3>
+        <h3>Juliana Consolati</h3>
     </footer>
-
 </body>
 </html>

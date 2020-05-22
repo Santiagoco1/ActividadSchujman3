@@ -1,0 +1,171 @@
+/*Variables*/
+:root {
+  --black-color: black;
+  --blue-body: #134074;
+  --blue-form: #13315c;
+  --blue-header: #0b2545;
+  --light-green-color: #95c923;
+  --orange-color: #f6511d;
+  --white-color: white;
+}
+
+/*General*/
+html, body {
+  background-color: var(--blue-body);
+  font-family: 'Roboto', sans-serif;
+  font-weight: 100;
+  padding: 0;
+}
+input, select, textarea, button{font-family:Roboto;}
+
+/*Header*/
+header {
+  height: 100px;
+  width: 100%;
+  padding: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background-color: var(--blue-header);
+}
+
+.title-container {
+  display: flex;
+  align-items: center;
+  text-align: center;
+}
+
+.title-container img {
+  width: 80px;
+  height: auto;
+  margin-right: 20px;
+}
+
+.links {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-gap: 10px;
+  align-items: center;
+}
+
+.img-container {
+  height: 70px;
+  width: 80px;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.img-container a{
+  display: flex;
+  text-decoration: none;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+header h6 {
+  color: white;
+  text-align: center;
+  font-size: 12px;
+  font-weight: bold;
+}
+
+header img {
+  height: 40px;
+  width: auto;
+  filter: brightness(0) invert(1);
+}
+
+/*tabla*/
+.tabla_grupo {
+    border: 0.6em solid #0F2752;
+    border-collapse: collapse;
+    background-color: #13315c;
+    font-family: 'Roboto', sans-serif;
+    text-align: center;
+    margin: auto;
+    margin-top: 40px;
+    width: 75%;
+}
+
+.tabla_grupo th{
+    border: 1px solid #D3D3D3;
+    color: #FFFFFF;
+    font-size: 2em;
+}
+
+.tabla_grupo td{
+    border: 1px solid #D3D3D3;
+    color: #F8F8FF ;
+    font-size: 1.5em;
+}
+
+.table_image {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 0.4em;
+
+    
+  }
+ img.blancoYnegro {
+   
+    filter: grayscale(0);
+     
+    -webkit-filter: grayscale(0);
+     
+    }
+  
+    
+img.blancoYnegro:hover {
+   
+  filter: grayscale(100%);
+   
+  -webkit-filter: grayscale(100%);
+   
+}
+
+/*footer*/
+footer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: black;
+  position: absolute;
+  width: 100%;
+  bottom: 0;
+}
+
+footer h3 {
+  font-size: 15px;
+  color: white;
+  margin: 0 10px;
+}
+
+@media (max-width: 991px) {
+  header a{
+    font-size: 13px;
+  }
+  header button {
+    font-size: 13px;
+  }
+  .dark-mode{
+    font-size: 13px;
+    text-align: center;
+  }
+  .footer h3{
+    font-size: 15px;
+  }
+}
+
+@media (max-width: 600px){
+  header h3{
+    font-size: 20px;
+  }
+  header button{
+    font-size: 20px;
+  }
+  .footer h3{
+    font-size: 15px;
+  }
+}
