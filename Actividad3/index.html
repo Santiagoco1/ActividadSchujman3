@@ -4,13 +4,30 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Actividad 3</title>
+    <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
     <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
     <link rel ="stylesheet" type = " text/css " href ="Actividad 3/css/styles.css" media =" screen ">
     <link rel="stylesheet" href="Actividad 3/css/animations.css">
-    <link rel="Shortcut Icon" href="images/dog.svg">
+    <link rel="Shortcut Icon" href="Actividad 3/images/dog.svg">
     <script src="https://code.jquery.com/jquery-3.4.0.min.js"></script>
-    <script src="Actividad 3/javascript/scripts.js" type="text/javascript"></script>
+    <script src="scripts.js" type="text/javascript"></script>
+    
 </head>
+
+<!-- name = medicamentos, nro_emer, nro_obrasocial-->
+<script> 
+     $(function () {
+        $("input[name='chkPassPort']").click(function () { 
+            if ($("#chkYes").is(":checked")) {
+                $("#txtPassportNumber").removeAttr("disabled");
+                $("#txtPassportNumber").focus();
+            } else {
+                $("#txtPassportNumber").attr("disabled", "disabled");
+            }
+        });
+    });
+</script>
+
 <body>
     <header class="fadeInDown">
         <div class="title-container">
@@ -42,10 +59,10 @@
     </header>
     
     <main>
-        <form action="">
-            <div class="form-title" id="registro" name="registro">
+        <form  id="registro" name="registro">
+            <div class="form-title" >
                 <h1>Ficha Médica</h1>
-            <div class="form-body">
+            <div class="form-body"  >
                 <!-- Nombre -->
                 <div class="nombre">
                     <h3>Nombre</h3>
@@ -148,17 +165,21 @@
                         <label for="ninguna">Ninguna</label>
                     </div>
                 </div>
-                <!-- Medicamentos
+                <!--Medicamentos-->
                 <div class="meds" style="grid-area: meds;">
                     <h3>¿Toma un medicamento en forma regular?</h3>
-                    <div class="radio-input">
-                        <input type="radio" id="si" name="medicamentos" style="grid-area: radio-input-si;">
-                        <label for="si" style="grid-area: radio-si;">S&Iacute;</label><br>
-                        <input type="radio" id="no" name="medicamentos" style="grid-area: radio-input-no;">
-                        <label for="no " name="medicamentos" style="grid-area: radio-no;">No</label><br>
-                        <Input placeholder="Cu&aacute;l?" name="medicamentos" style="grid-area: radio-input-cual;"></Input>
+                    <div class="radio-input"> 
+                        <label for="chkYes" style="grid-area: radio-si;">
+                            <input type="radio" id="chkYes" name="chkPassPort" style="grid-area: radio-input-si;"/>
+                            Sí
+                        </label>
+                        <label for="chkNo" style="grid-area: radio-no;">
+                            <input type="radio" id="chkNo" name="chkPassPort"  style="grid-area: radio-input-no;"/>
+                            No
+                        </label>
+                        <input type="text" id="txtPassportNumber" disabled="disabled" style="grid-area: radio-input-cual;" placeholder="Cu&aacute;l?"/>
                     </div>
-                </div>-->
+                </div>
                 <!-- Celular Personal-->
                 <div class="cel" style="grid-area: cel;">
                     <h3>Numero de Celular</h3>
@@ -172,7 +193,7 @@
                 <!-- Email -->
                 <div class="email" style="grid-area: email;">
                     <h3>Email</h3>
-                    <input type="email" name="email" id="email" name="email" placeholder="Tu email">
+                    <input type="email" name="email" id="email" name="email" placeholder="Tu email...">
                 </div>
                 <!-- Telefono Alternativo -->
                 <div class="tel-alt" style="grid-area: tel-alt;">
@@ -196,7 +217,7 @@
                 </div>
             </div>
             <div class="form-button" style="background-color: #13315c; text-align: center;">
-                <button class="button" style="vertical-align:middle" type="submit" name="enviar" id="registro_enviar"><span>Enviar </span></button>
+                <button class="button" type="submit" name="enviar" id="registro_enviar" style="vertical-align:middle"><span>Enviar </span></button>
             </div>
         </form>
     </main>
@@ -207,7 +228,8 @@
         <h3>Juliana Consolati</h3>
     </footer>
 
-    <script>
+    <script type="text/javascript">
+    
         const allRanges = document.querySelectorAll(".range-wrap");
         allRanges.forEach(wrap => {
         const range = wrap.querySelector(".range");

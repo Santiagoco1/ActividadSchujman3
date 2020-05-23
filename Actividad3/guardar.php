@@ -4,6 +4,7 @@ include "var.inc";
 $mysqli = new mysqli($HOST, $USER, $PASS, $DB);
 	/* Crea la tabla si esta no existe. La tabulacion es para que quede mas lindo. En total 24 
 	$registro = $mysqli_query("create table if not exists $TABLA (
+		agssoft.ar/UNO
 		apellido		varchar(60),
 		nombre			varchar(60),
 		fecha_nacimien	date,
