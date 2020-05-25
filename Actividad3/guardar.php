@@ -20,18 +20,24 @@ $mysqli = new mysqli($HOST, $USER, $PASS, $DB);
 		telefono_fijo	text,
 		telefono_altern	text,
 		email			text,
-		enfermedades	text,
+		enfermedades	varchar(100),
 		medicamentos	text,
-		foto_cara		file,
+		sexo			text,
 		color_fav		text,
 		talle_zapato	int,
 		cuando	 		timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP(),
 		orden			int not null primary key auto_increment
 	)");*/
 	/* Mete las cosas en la tabla */
-	$mysqli->query("insert into clientes (apellido, nombre, dni, domicilio) values ('".$_POST['apellido']."','".$_POST['nombre']."','".$_POST['dni']."','".$_POST['domicilio']."')");
+$arrayEnfermedades =" ".$_POST['enfermedades4']." ,".$_POST['enfermedades3']." , ".$_POST['enfermedades2']." , ".$_POST['enfermedades1']." ";
+	$mysqli->query("insert into test1 (apellido, nombre, dni, domicilio, fecha_nacimien ,peso,grupo_sanguineo , factor ,altura , email , telefono_fijo, telefono_celu,	telefono_altern , talle_zapato,  medicamentos,  nro_emer, nro_obrasocial , enfermedades, color_fav, sexo ) values ('".$_POST['apellido']."','".$_POST['nombre']."','".$_POST['dni']."','".$_POST['domicilio']."','".$_POST['fecha_nacimien']."' ,'".$_POST['peso']."' , '".$_POST['grupo_sanguineo']."' , '".$_POST['factor']."' , '".$_POST['altura']."' , '".$_POST['email']."' , '".$_POST['telefono_fijo']."' , '".$_POST['telefono_celu']."' , '".$_POST['telefono_altern']."' , '".$_POST['talle_zapato']."' , '".$_POST['medicamentos']."' , '".$_POST['nro_emer']."','".$_POST['nro_obrasocial']."' , '$arrayEnfermedades' , '".$_POST['color_fav']."' , '".$_POST['sexo']."' )" ); 
 /*
-	$mysqli->query("insert into test1 (apellido, nombre,  dni, domicilio)
+       
+ ,
+,
+	
+
+$mysqli->query("insert into test1 (apellido, nombre,  dni, domicilio)
 				values ('".$_POST['apellido']."','".$_POST['nombre'].',
    '"".$_POST['dni']."','".$_POST['domicilio']."')");
    
@@ -40,12 +46,11 @@ $mysqli = new mysqli($HOST, $USER, $PASS, $DB);
    /*foto_cara, nro_emer, nro_obrasocial, medicamentos,color_fav,fecha_nacimien,grupo_sanguineo, factor,altura, enfermedades,peso, email, telefono_fijo, telefono_celu, 
    telefono_altern,     talle_zapato
    '"".$_POST['fecha_nacimien'].', '".$_POST['grupo_sanguineo']."','".$_POST['factor']."',				
-   '".$_POST['nro_emer']."','".$_POST['nro_obrasocial']."','".$_POST['enfermedades']."',
-   '".$_POST['color_fav']."','".$_POST['foto_cara']."', '".$_POST['medicamentos']."', 
-'".$_POST['peso']."','".$_POST['altura']."','
-   '".$_POST['email']."','".$_POST['telefono_fijo']."','".$_POST['telefono_celu']."',
-   '".$_POST['telefono_altern']."',
-   '".$_POST['talle_zapato']."')"
-   $_POST['foto_cara']."', '".$_POST['medicamentos']."', */
+   ,
+   '".$_POST['foto_cara']."', '".$_POST['medicamentos']."', 
+'
+   
+   )"
+      $_POST['foto_cara']."',*/
 
 ?>

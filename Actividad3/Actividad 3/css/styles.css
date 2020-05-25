@@ -225,13 +225,13 @@ input, select, textarea{
     grid-template-rows: repeat(9, 1fr);
     grid-template-areas: "nombre apellido"
                          "fecha dni"
-                         "domic emerg"
-                         "obra grupo"
-                         "factor peso"
-                         "altura alergias"
-                         "meds cel"
-                         "tel email"
-                         "tel-alt cara"
+                         "sexo domic"
+                         "emerg obra"
+                         "grupo factor"
+                         "peso altura"
+                         "enfermedades meds"
+                         "cel tel"
+                         "email tel-alt"
                          "color zapato";
     align-content: center;
     background-color: var(--blue-form);
@@ -324,6 +324,7 @@ footer h3 {
                              "apellido"
                              "fecha"
                              "dni"
+                             "sexo"
                              "domic"
                              "emerg"
                              "obra"
@@ -331,13 +332,12 @@ footer h3 {
                              "factor"
                              "peso"
                              "altura"
-                             "alergias"
+                             "enfermedades"
                              "meds"
                              "cel"
                              "tel"
                              "email"
                              "tel-alt"
-                             "cara"
                              "color"
                              "zapato";
     }
