@@ -1,10 +1,9 @@
-
 main {
     display: flex;
     justify-content: center;
     margin: 0;
     padding: 1%;
-    margin-top: 70px;
+    margin-top: 35px;
 }
 
 .cards-container {
@@ -16,12 +15,14 @@ main {
 }
 
 .card {
+    border-radius: 100px;
     width: 30%;
     margin-bottom: 30px;
 }
 
 .card-title {
-    background-color:#0F2752;
+    color: white;
+    background-color: var(--orange-color);
 }
 
 .card-title h1 {
@@ -31,6 +32,8 @@ main {
 .card-body {
     padding: 15px;
     background-color: var(--blue-form);
+    color: white;
+    font-size: 20px;
 }
 
 .cards-container h3 {

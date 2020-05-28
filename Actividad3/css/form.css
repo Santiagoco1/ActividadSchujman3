@@ -215,3 +215,37 @@ input, select, textarea{
     color: white;
     margin-right: 20px;
 }
+
+@media (max-width: 1200px) {
+  .form-body h3{
+      font-size: 17px;
+  }
+  .form-body label {
+      font-size: 13px;
+  }
+}
+@media (max-width: 900px) {
+  .form-body {
+      grid-template-columns: 1fr;
+      grid-template-areas: "nombre"
+                           "apellido"
+                           "fecha"
+                           "dni"
+                           "sexo"
+                           "domic"
+                           "emerg"
+                           "obra"
+                           "grupo"
+                           "factor"
+                           "peso"
+                           "altura"
+                           "enfermedades"
+                           "meds"
+                           "cel"
+                           "tel"
+                           "email"
+                           "tel-alt"
+                           "color"
+                           "zapato";
+  }
+}

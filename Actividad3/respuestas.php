@@ -45,44 +45,44 @@
     <main>
         <div class="cards-container">
             <?php
-            /*  subi la pag gato */
+
             include "var.inc";
             $conn = new mysqli($HOST, $USER, $PASS, $DB); 
             $result = $conn -> query( "SELECT * from $TABLA" );
-            /* que responsa  */ 
+
             if ($result ->num_rows > 0) {
                 while ( $rows = mysqli_fetch_assoc($result) ) {
 
                     ?>
                     <div class="card">
                         <div class="card-title">
-                            <h1>Formulario 1</h1>
+                            <h1>Ficha Médica</h1>
                         </div>
                         <div class="card-body">
-                    <?php
-
-                    echo "<h3><b>Nombre:</b> ". $rows["nombre"]."</h3>";
-                    echo "<h3><b>Apellido:</b> ". $rows["apellido"]."</h3>";
-                    echo "<h3><b>DNI:</b> ". $rows["dni"]."</h3>";
-                    echo "<h3><b>Domicilio:</b> ". $rows["domicilio"]."</h3>";
-                    echo "<h3><b>Fecha de Nacimiento:</b> ". $rows["fecha_nacimien"]."</h3>";
-                    echo "<h3><b>Peso:</b> ". $rows["peso"]."</h3>";
-                    echo "<h3><b>Altura:</b> ". $rows["altura"]."</h3>";
-                    echo "<h3><b>Nro Emergerncia:</b> ". $rows["nro_emer"]."</h3>";
-                    echo "<h3><b>Obra Social:</b> ". $rows["nro_obrasocial"]."</h3>";
-                    echo "<h3><b>Grupo Sanguineo:</b> ". $rows["grupo_sanguineo"]."</h3>";
-                    echo "<h3><b>Factor Sanguineo:</b> ". $rows["factor"]."</h3>";
-                    echo "<h3><b>Cel:</b> ". $rows["telefono_celu"]."</h3>";
-                    echo "<h3><b>Tel Fijo:</b> ". $rows["telefono_fijo"]."</h3>";
-                    echo "<h3><b>Tel Alt:</b> ". $rows["telefono_altern"]."</h3>";
-                    echo "<h3><b>Email:</b> ". $rows["email"]."</h3>";
-                    echo "<h3><b>Enfermedades:</b> <br>". $rows["enfermedades"]."</h3>";
-                    echo "<h3><b>Medicamentos:</b> ". $rows["medicamentos"]."</h3>";
-                    echo "<h3><b>Color:</b> ". $rows["color_fav"]."</h3>";
-                    echo "<h3><b>Zapato:</b> ". $rows["talle_zapato"]."</h3>";
-                    echo "<h3><b>Sexo:</b> ". $rows["sexo"]."</h3>";
-
-                    ?>
+                        
+                        <?php
+                        echo "<h3><b>Nombre: </b> ". $rows["nombre"]."</h3>";
+                        echo "<h3><b>Apellido: </b> ". $rows["apellido"]."</h3>";
+                        echo "<h3><b>DNI: </b> ". $rows["dni"]."</h3>";
+                        echo "<h3><b>Domicilio: </b> ". $rows["domicilio"]."</h3>";
+                        echo "<h3><b>Fecha de Nacimiento: </b> ". $rows["fecha_nacimien"]."</h3>";
+                        echo "<h3><b>Peso: </b> ". $rows["peso"]."</h3>";
+                        echo "<h3><b>Altura: </b> ". $rows["altura"]."</h3>";
+                        echo "<h3><b>Nro Emergerncia: </b> ". $rows["nro_emer"]."</h3>";
+                        echo "<h3><b>Obra Social: </b> ". $rows["nro_obrasocial"]."</h3>";
+                        echo "<h3><b>Grupo Sanguineo: </b> ". $rows["grupo_sanguineo"]."</h3>";
+                        echo "<h3><b>Factor Sanguineo: </b> ". $rows["factor"]."</h3>";
+                        echo "<h3><b>Cel: </b> ". $rows["telefono_celu"]."</h3>";
+                        echo "<h3><b>Tel Fijo: </b> ". $rows["telefono_fijo"]."</h3>";
+                        echo "<h3><b>Tel Alt: </b> ". $rows["telefono_altern"]."</h3>";
+                        echo "<h3><b>Email: </b> ". $rows["email"]."</h3>";
+                        echo "<h3><b>Enfermedades: </b> <br>". $rows["enfermedades"]."</h3>";
+                        echo "<h3><b>Medicamentos: </b> ". $rows["medicamentos"]."</h3>";
+                        echo "<h3><b>Color: </b> ". $rows["color_fav"]."</h3>";
+                        echo "<h3><b>Zapato: </b> ". $rows["talle_zapato"]."</h3>";
+                        echo "<h3><b>Sexo: </b> ". $rows["sexo"]."</h3>";
+                        ?>
+                        
                         </div>
                     </div>
                     <?php

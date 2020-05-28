@@ -94,14 +94,14 @@
                     <h3>¿Esta afiliado a un servicio de emergencia?</h3>
                     <div class="radio-input">
                         <label for="chkYes" style="grid-area: radio-si;">
-                            <input onclick="desbloqueo( 'nro_emerChk' )" value="Yes" type="radio" id="chkYes" name="nro_emerChk" style="grid-area: radio-input-si;"/>
+                            <input onclick="desbloqueo( 'nro_emerChk' )"  value="Yes" type="radio" id="chkYes" name="nro_emerChk" style="grid-area: radio-input-si;"/>
                             Sí
-                        </label>
+                            </label>
                         <label for="chkNo" style="grid-area: radio-no;">
                             <input onclick="bloqueo( 'nro_emerChk' )" value="No" type="radio" id="chkNo" name="nro_emerChk"  style="grid-area: radio-input-no;"/>
                             No
                         </label>
-                        <input type="text" id="nro_emerChk" name="nro_emer" disabled="disabled" style="grid-area: radio-input-cual;" placeholder="Cu&aacute;l?"/>
+                        <input type="text" id="nro_emerChk" name="nro_emer" style="grid-area: radio-input-cual; opacity: 0; overflow: hidden;" placeholder="Cu&aacute;l?"/>
                     </div>
                 </div>
                 <!-- Obra Social -->
@@ -116,7 +116,7 @@
                             <input onclick="bloqueo( 'nro_obrasocialChk' )" value="No" type="radio" id="chkNo" name="nro_obrasocialChk"  style="grid-area: radio-input-no;"/>
                             No
                         </label>
-                        <input type="text" id="nro_obrasocialChk" name="nro_obrasocial" disabled="disabled" style="grid-area: radio-input-cual;" placeholder="Cu&aacute;l?"/>
+                        <input type="text" id="nro_obrasocialChk" name="nro_obrasocial"  style="grid-area: radio-input-cual; opacity: 0; overflow: hidden;" placeholder="Cu&aacute;l?"/>
                     </div>
                 </div>
                 <!-- Grupo Sanguinio -->
@@ -186,7 +186,7 @@
                             <input onclick="bloqueo( 'medicamentoChk' )" value="No" type="radio" id="medicamentosNo" name="medicamentoChk"  style="grid-area: radio-input-no;"/>
                             No
                         </label>
-                        <input type="text" id="medicamentoChk" name="medicamentos" disabled="disabled" style="grid-area: radio-input-cual;" placeholder="Cu&aacute;l?"/>
+                        <input type="text" id="medicamentoChk" name="medicamentos"  style="grid-area: radio-input-cual; opacity: 0; overflow: hidden;" placeholder="Cu&aacute;l?"/>
                     </div>
                 </div>
                 <!-- Celular Personal-->
