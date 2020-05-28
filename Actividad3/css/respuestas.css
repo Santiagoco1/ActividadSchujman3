@@ -1,0 +1,50 @@
+
+main {
+    display: flex;
+    justify-content: center;
+    margin: 0;
+    padding: 1%;
+    margin-top: 70px;
+}
+
+.cards-container {
+    max-width: 1800px;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.card {
+    width: 30%;
+    margin-bottom: 30px;
+}
+
+.card-title {
+    background-color:#0F2752;
+}
+
+.card-title h1 {
+    margin: 0 15px;
+}
+
+.card-body {
+    padding: 15px;
+    background-color: var(--blue-form);
+}
+
+.cards-container h3 {
+    color: white;
+}
+
+@media (max-width: 1200px) {
+    .card {
+        width: 45%;
+    }
+}
+
+@media (max-width: 600px) {
+    .card {
+        width: 90%;
+    }
+}

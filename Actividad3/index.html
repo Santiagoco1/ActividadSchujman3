@@ -5,8 +5,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Actividad 3</title>
     <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
-    <link rel ="stylesheet" type = " text/css " href ="Actividad 3/css/styles.css" media =" screen ">
-    <link rel="stylesheet" href="Actividad 3/css/animations.css">
+    <link rel="stylesheet" href="css/var.css">
+    <link rel="stylesheet" href="css/general.css">
+    <link rel="stylesheet" href="css/header.css">
+    <link rel="stylesheet" href="css/form.css">
+    <link rel="stylesheet" href="css/footer.css">
+    <link rel="stylesheet" href="css/animations.css">
     <link rel="Shortcut Icon" href="Actividad 3/images/dog.svg">
     <script src="https://code.jquery.com/jquery-3.4.0.min.js"></script>
     <script src="scripts.js" type="text/javascript"></script>
@@ -16,26 +20,26 @@
     <header class="fadeInDown">
         <div class="title-container">
             <a href="https://ips.edu.ar/" target="_blank">
-                <img src="Actividad 3/images/IPS_Logo.png" alt="IPS-logo">
+                <img src="images/IPS_Logo.png" alt="IPS-logo">
             </a>
             <h1 style="color: white;">Actividad 3</h1>
         </div>
         <div class="links">
             <div class="img-container">
                 <a href="index.html">
-                    <img src="Actividad 3/images/form.png" alt="">                
+                    <img src="images/form.png" alt="">                
                     <h6>Formulario</h6>
                 </a>
             </div>
             <div class="img-container">
-                <a href="respuestas2.php">   
-                    <img src="Actividad 3/images/respuestas.png" alt="respuestas">
+                <a href="respuestas.php">   
+                    <img src="images/respuestas.png" alt="respuestas">
                     <h6>Respuestas</h6>
                 </a>
             </div>
             <div class="img-container">
-                <a href="Actividad1/Actividad1.html">
-                    <img src="Actividad 3/images/tabla.png" alt="actividad1">
+                <a href="Actividad1.html">
+                    <img src="images/tabla.png" alt="actividad1">
                     <h6>Actividad 1</h6>
                 </a>
             </div>
@@ -90,11 +94,11 @@
                     <h3>¿Esta afiliado a un servicio de emergencia?</h3>
                     <div class="radio-input">
                         <label for="chkYes" style="grid-area: radio-si;">
-                            <input onclick="desbloqueo( 'nro_emerChk' )" type="radio" id="chkYes" name="nro_emerChk" style="grid-area: radio-input-si;"/>
+                            <input onclick="desbloqueo( 'nro_emerChk' )" value="Yes" type="radio" id="chkYes" name="nro_emerChk" style="grid-area: radio-input-si;"/>
                             Sí
                         </label>
                         <label for="chkNo" style="grid-area: radio-no;">
-                            <input onclick="bloqueo( 'nro_emerChk' )" type="radio" id="chkNo" name="nro_emerChk"  style="grid-area: radio-input-no;"/>
+                            <input onclick="bloqueo( 'nro_emerChk' )" value="No" type="radio" id="chkNo" name="nro_emerChk"  style="grid-area: radio-input-no;"/>
                             No
                         </label>
                         <input type="text" id="nro_emerChk" name="nro_emer" disabled="disabled" style="grid-area: radio-input-cual;" placeholder="Cu&aacute;l?"/>
@@ -105,11 +109,11 @@
                     <h3>¿Esta afiliado a una Obra Social?</h3>
                     <div class="radio-input"> 
                         <label for="chkYes" style="grid-area: radio-si;">
-                            <input onclick="desbloqueo( 'nro_obrasocialChk' )" type="radio" id="chkYes" name="nro_obrasocialChk" style="grid-area: radio-input-si;"/>
+                            <input onclick="desbloqueo( 'nro_obrasocialChk' )" value="Yes" type="radio" id="chkYes" name="nro_obrasocialChk" style="grid-area: radio-input-si;"/>
                             Sí
                         </label>
                         <label for="chkNo" style="grid-area: radio-no;">
-                            <input onclick="bloqueo( 'nro_obrasocialChk' )" type="radio" id="chkNo" name="nro_obrasocialChk"  style="grid-area: radio-input-no;"/>
+                            <input onclick="bloqueo( 'nro_obrasocialChk' )" value="No" type="radio" id="chkNo" name="nro_obrasocialChk"  style="grid-area: radio-input-no;"/>
                             No
                         </label>
                         <input type="text" id="nro_obrasocialChk" name="nro_obrasocial" disabled="disabled" style="grid-area: radio-input-cual;" placeholder="Cu&aacute;l?"/>
@@ -175,11 +179,11 @@
                     <h3>¿Toma un medicamento en forma regular?</h3>
                     <div class="radio-input" > 
                         <label for="medicamentosYes" style="grid-area: radio-si;">
-                            <input onclick="desbloqueo( 'medicamentoChk' )" type="radio" id="medicamentosYes" name="medicamento" style="grid-area: radio-input-si;"/>
+                            <input onclick="desbloqueo( 'medicamentoChk' )" value="Yes" type="radio" id="medicamentosYes" name="medicamentoChk" style="grid-area: radio-input-si;"/>
                             Sí
                         </label>
                         <label for="medicamentosNo" style="grid-area: radio-no;">
-                            <input onclick="bloqueo( 'medicamentoChk' )" type="radio" id="medicamentosNo" name="medicamento"  style="grid-area: radio-input-no;"/>
+                            <input onclick="bloqueo( 'medicamentoChk' )" value="No" type="radio" id="medicamentosNo" name="medicamentoChk"  style="grid-area: radio-input-no;"/>
                             No
                         </label>
                         <input type="text" id="medicamentoChk" name="medicamentos" disabled="disabled" style="grid-area: radio-input-cual;" placeholder="Cu&aacute;l?"/>
