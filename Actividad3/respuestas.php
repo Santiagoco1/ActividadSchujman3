@@ -11,32 +11,32 @@
     <link rel="stylesheet" href="css/respuestas.css">
     <link rel="stylesheet" href="css/footer.css">
     <link rel="stylesheet" href="css/animations.css">
-    <link rel="Shortcut Icon" href="Respuestas/images/dog.svg">
+    <link rel="Shortcut Icon" href="images/dog.svg">
 </head>
 <body>
     <header class="fadeInDown">
         <div class="title-container">
             <a href="https://ips.edu.ar/" target="_blank">
-                <img src="Respuestas/images/IPS_Logo.png" alt="IPS-logo">
+                <img src="images/IPS_Logo.png" alt="IPS-logo">
             </a>
             <h1 style="color: white;">Actividad 3</h1>
         </div> 
         <div class="links">
             <div class="img-container">
                 <a href="index.html">
-                    <img src="Respuestas/images/form.png" alt="">                
+                    <img src="images/form.png" alt="">                
                     <h6>Formulario</h6>
                 </a>
             </div>
             <div class="img-container">
                 <a href="respuestas.php">
-                    <img src="Respuestas/images/respuestas.png" alt="respuestas">
+                    <img src="images/respuestas.png" alt="respuestas">
                     <h6>Respuestas</h6>
                 </a>
             </div>
             <div class="img-container">
                 <a href="Actividad1.html">
-                    <img src="Respuestas/images/tabla.png" alt="actividad1">
+                    <img src="images/tabla.png" alt="actividad1">
                     <h6>Actividad 1</h6>
                 </a>
             </div>

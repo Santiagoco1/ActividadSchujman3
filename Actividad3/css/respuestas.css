@@ -7,6 +7,7 @@ main {
 }
 
 .cards-container {
+    border-radius: 100px;
     max-width: 1800px;
     display: flex;
     justify-content: space-evenly;
@@ -15,14 +16,13 @@ main {
 }
 
 .card {
-    border-radius: 100px;
     width: 30%;
     margin-bottom: 30px;
 }
 
 .card-title {
-    color: white;
-    background-color: var(--orange-color);
+    color: var(--orange-color);
+    background-color: var(--blue-form);
 }
 
 .card-title h1 {
