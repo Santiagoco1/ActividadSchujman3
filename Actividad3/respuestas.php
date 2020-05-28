@@ -48,7 +48,7 @@
 
             include "var.inc";
             $conn = new mysqli($HOST, $USER, $PASS, $DB); 
-            $result = $conn -> query( "SELECT * from $TABLA" );
+            $result = $conn -> query( "SELECT * from Tablon" );
 
             if ($result ->num_rows > 0) {
                 while ( $rows = mysqli_fetch_assoc($result) ) {

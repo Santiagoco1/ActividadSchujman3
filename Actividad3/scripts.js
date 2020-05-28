@@ -30,10 +30,10 @@ $(document).ready(function () {
 });
 
 function bloqueo(resp){
-        var respuesta = document.getElementById(resp);
-            respuesta.style.opacity= "0";
-            respuesta.style.overflow = "hidden";
-            respuesta.value="No."
+    var respuesta = document.getElementById(resp);
+        respuesta.style.opacity= "0";
+        respuesta.style.overflow = "hidden";
+        respuesta.value="No."
 }
 
 function desbloqueo(resp){

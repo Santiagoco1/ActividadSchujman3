@@ -224,6 +224,7 @@ input, select, textarea{
       font-size: 13px;
   }
 }
+
 @media (max-width: 900px) {
   .form-body {
       grid-template-columns: 1fr;
