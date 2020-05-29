@@ -12,7 +12,7 @@
     <link rel="stylesheet" href="css/footer.css">
     <link rel="stylesheet" href="css/animations.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-    <link rel="Shortcut Icon" href="Actividad 3/images/dog.svg">
+    <link rel="Shortcut Icon" href="images/dog.svg">
     <script src="https://code.jquery.com/jquery-3.4.0.min.js"></script>
     <script src="scripts.js" type="text/javascript"></script>
 </head>
@@ -55,7 +55,7 @@
                 <!-- Nombre -->
                 <div class="nombre">
                     <h3>Nombre</h3>
-                    <input type="text" name="nombre" style="grid-area: nombre;" placeholder="Tu nombre...">
+                    <input type="text" name="nombre"  style="grid-area: nombre;" placeholder="Tu nombre..." >
                 </div>
                 <!-- Apellido -->
                 <div class="apellido" style="grid-area: apellido;">
@@ -65,12 +65,12 @@
                 <!-- Edad (edad maxima 120 años ) -->
                 <div class="fecha" style="grid-area: fecha;">
                     <h3>Fecha de Nacimiento</h3>
-                    <input type="date" name="fecha_nacimien" id="fecha_nacimien" min="1900-01-01">
+                    <input type="date" name="fecha_nacimien" id="fecha_nacimien" min="1900-01-01" required>
                 </div>
                 <!-- DNI -->
                 <div class="dni" style="grid-area: dni;">
                     <h3>DNI</h3>
-                    <input type="text" name="dni"  maxlength="8" placeholder="Tu DNI..">
+                    <input type="tel" name="dni" pattern="[0-9]{8}" placeholder="Tu DNI..">
                 </div>
                 <!-- Modo sexo --> 
                 <div class="cara" style="grid-area: sexo;">
@@ -148,7 +148,7 @@
                         </select>
                         </div>
                 </div>
-                <!-- Peso Corporal -->
+                    <!-- Peso Corporal -->
                 <div class="peso" style="grid-area: peso;">
                     <h3>Peso Corporal (rango entre 0kg y 300kg)</h3>
                     <input type="number" id="quantity" name="peso" min="0" max="300" step="1" value="0" style="margin: 0; padding: 4px; color: white;">

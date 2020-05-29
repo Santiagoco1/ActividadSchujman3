@@ -48,7 +48,7 @@
 
             include "var.inc";
             $conn = new mysqli($HOST, $USER, $PASS, $DB); 
-            $result = $conn -> query( "SELECT * from Tablon" );
+            $result = $conn -> query( "SELECT * from $TABLA" );
 
             if ($result ->num_rows > 0) {
                 while ( $rows = mysqli_fetch_assoc($result) ) {
@@ -64,11 +64,12 @@
                         echo "<h3><b>Nombre: </b> ". $rows["nombre"]."</h3>";
                         echo "<h3><b>Apellido: </b> ". $rows["apellido"]."</h3>";
                         echo "<h3><b>DNI: </b> ". $rows["dni"]."</h3>";
+                        echo "<h3><b>Sexo: </b> ". $rows["sexo"]."</h3>";
                         echo "<h3><b>Domicilio: </b> ". $rows["domicilio"]."</h3>";
                         echo "<h3><b>Fecha de Nacimiento: </b> ". $rows["fecha_nacimien"]."</h3>";
-                        echo "<h3><b>Peso: </b> ". $rows["peso"]."</h3>";
-                        echo "<h3><b>Altura: </b> ". $rows["altura"]."</h3>";
-                        echo "<h3><b>Nro Emergerncia: </b> ". $rows["nro_emer"]."</h3>";
+                        echo "<h3><b>Peso: </b> ". $rows["peso"]."kg </h3>";
+                        echo "<h3><b>Altura: </b> ". $rows["altura"]."cm</h3>";
+                        echo "<h3><b>Servicio Emergerncia: </b> ". $rows["nro_emer"]."</h3>";
                         echo "<h3><b>Obra Social: </b> ". $rows["nro_obrasocial"]."</h3>";
                         echo "<h3><b>Grupo Sanguineo: </b> ". $rows["grupo_sanguineo"]."</h3>";
                         echo "<h3><b>Factor Sanguineo: </b> ". $rows["factor"]."</h3>";
@@ -78,9 +79,8 @@
                         echo "<h3><b>Email: </b> ". $rows["email"]."</h3>";
                         echo "<h3><b>Enfermedades: </b> <br>". $rows["enfermedades"]."</h3>";
                         echo "<h3><b>Medicamentos: </b> ". $rows["medicamentos"]."</h3>";
-                        echo "<h3><b>Color: </b> ". $rows["color_fav"]."</h3>";
+                        echo "<h3><b>Color calzón: </b> ". $rows["color_fav"]."</h3>";
                         echo "<h3><b>Zapato: </b> ". $rows["talle_zapato"]."</h3>";
-                        echo "<h3><b>Sexo: </b> ". $rows["sexo"]."</h3>";
                         ?>
                         
                         </div>
@@ -89,12 +89,13 @@
                 }
             }
             else {
-                echo "0 result";
+                echo "<h3> No hay respuestas aún ;(( </h3>";
             }
             ?>
         </div>
               
     </main>
+
     <footer>
         <h3>Santiago C&oacute;</h3>
         <h3>Franco Gozzerino</h3>

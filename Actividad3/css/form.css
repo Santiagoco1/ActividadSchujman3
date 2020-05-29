@@ -11,9 +11,9 @@ main {
     font-family: 'Roboto', sans-serif;
     display: inline-block;
     border-radius: 4px;
-    background-color: #f4511e;
+    background-color: var(--orange-color);
     border: none;
-    color: #FFFFFF;
+    color: white;
     text-align: center;
     font-size: 28px;
     padding: 20px ;
@@ -85,7 +85,7 @@ select {
   select {
     flex: 1;
     padding: 0 .5em;
-    color: #fff;
+    color: white;
     cursor: pointer;
   }
   /* Arrow */
@@ -127,7 +127,7 @@ input, select, textarea{
     padding: 0;
     width: 100%;
     height: auto;
-    background-color:#0F2752;
+    background-color: var(--blue-title);
     color: white;
 }
 

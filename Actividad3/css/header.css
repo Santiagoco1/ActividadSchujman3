@@ -54,3 +54,26 @@ header {
     width: auto;
     filter: brightness(0) invert(1);
   }
+
+  @media (max-width: 600px) {
+    header{
+      height: 80px;
+    }
+    .title-container img {
+      width: 50px;
+      margin-right: 10px; 
+    }
+    .img-container {
+      height: 30px;
+      width: 50px;
+    }
+    header h1{
+      font-size: 20px;
+    }
+    header img{
+      height: 30px;
+    }
+    header h6 {
+      display: none;
+    }
+  }
