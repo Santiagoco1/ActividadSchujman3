@@ -14,9 +14,8 @@ $mysqli = new mysqli($HOST, $USER, $PASS, $DB);
 		orden			int not null primary key auto_increment
     )");
     
-    /* Crea la tabla si esta no existe */
-    $mysqli->query("drop table if exists Test2");
-    $registro = $mysqli->query("create table if not exists Test2 (	
+     	$mysqli->query("drop table if exists Test2");
+    	$registro = $mysqli->query("create table if not exists Test2 (	
 		apellido		varchar(60) ,
 		nombre			varchar(60)  ,
 		fecha_nacimien	date ,
@@ -40,5 +39,5 @@ $mysqli = new mysqli($HOST, $USER, $PASS, $DB);
 		cuando	 		timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP(),
 		orden			int not null primary key auto_increment
     )");
-    
+  
 ?>
