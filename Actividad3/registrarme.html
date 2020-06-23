@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Actividad IV</title>
     <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
     <link rel="stylesheet" href="css/var.css">
     <link rel="stylesheet" href="css/general.css">
@@ -11,6 +11,7 @@
     <link rel="stylesheet" href="css/footer.css">
     <link rel="stylesheet" href="css/registro.css">
     <link rel="stylesheet" href="css/animations.css">
+    <link rel="Shortcut Icon" href="images/dog.png">
     <script src="https://code.jquery.com/jquery-3.4.0.min.js"></script>
     <script src="registro.js" type="text/javascript"></script>
 </head>
@@ -26,17 +27,16 @@
     <main>
         <p class="sign">Registrarse</p>
         <form id="registro" name="registro">
-            <input type="text" name="nombre" placeholder="Username...">
-            <input type="password" name="contra" placeholder="Password...">
-            <input type="password" name="contra" placeholder="Repetir password...">
-            <input type="email" name="email" placeholder="Email...">
-            <input type="text" name="edad" placeholder="Edad...">
-            <input type="file" id="img" name="img" accept="image/*">
+            <input type="text" name="nombre" placeholder="Username..." required>
+            <input type="password" name="contra" placeholder="Password..." required>
+            <input type="password" name="contra" placeholder="Repetir password..." required>
+            <input type="email" name="email" placeholder="Email..." required>
+            <input type="file" id="img" name="img" accept="image/*" required>
             <button class="submit" type="submit" name="enviar" id="registro_enviar"><span>Enviar </span></button>
-            <p class="forgot"><a href="iniciar-sesion.html">Ya tienes una cuenta?</p>          
+            <p class="forgot"><a href="iniciar_sesion.html">Ya tienes una cuenta?</p>          
         </form>
     </main>
-    <footer>
+    <footer style="position: fixed; bottom: 0;">
         <h3>Santiago C&oacute;</h3>
         <h3>Franco Gozzerino</h3>
         <h3>Juliana Consolati</h3>

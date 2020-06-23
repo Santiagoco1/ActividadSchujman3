@@ -9,9 +9,11 @@ header {
   }
   
   .title-container {
+    width: 100%;
     display: flex;
     align-items: center;
     text-align: center;
+    justify-content: start;
   }
   
   .title-container img {
@@ -56,13 +58,22 @@ header {
     filter: brightness(0) invert(1);
   }
 
+  @media (max-width: 750px) {
+    header h1 {
+      font-size: 27.5px;
+    }
+  }
+
   @media (max-width: 600px) {
     header{
       height: 80px;
     }
+    .title-container {
+      justify-content: center;
+    }
     .title-container img {
       width: 50px;
-      margin-right: 10px; 
+      margin-right: 10px;
     }
     .img-container {
       height: 30px;

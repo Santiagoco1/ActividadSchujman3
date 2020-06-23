@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Actividad 3</title>
+    <title>Actividad IV</title>
     <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
     <link rel="stylesheet" href="css/var.css">
     <link rel="stylesheet" href="css/general.css">
@@ -11,7 +11,7 @@
     <link rel="stylesheet" href="css/respuestas.css">
     <link rel="stylesheet" href="css/footer.css">
     <link rel="stylesheet" href="css/animations.css">
-    <link rel="Shortcut Icon" href="images/dog.svg">
+    <link rel="Shortcut Icon" href="images/dog.png">
 </head>
 <body>
     <header class="fadeInDown">
