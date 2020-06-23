@@ -26,7 +26,7 @@
     </header>
     <main>
         <p class="sign">Iniciar Sesión</p>
-        <form  id="registro" name="registro">
+        <form action="Validar_user.php" method="post" >
             <input type="text" name="email" placeholder="email..." required>
             <input type="password" name="contra" placeholder="Password..." required>
             <input class="btn btn-primary" type="submit" value="Aceptar">
@@ -39,10 +39,5 @@
         <h3>Franco Gozzerino</h3>
         <h3>Juliana Consolati</h3>
     </footer>
-    <?php
-		if(isset($_POST['submit'])){
-			require("Validar_user.php");
-		}
-	?>
 </body>
 </html>
