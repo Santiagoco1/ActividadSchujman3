@@ -6,6 +6,7 @@ $mysqli = new mysqli($HOST, $USER, $PASS, $DB);
     $mysqli->query("drop table if exists Test1");
     $registro = $mysqli->query("create table if not exists Test1 (	
 		contra  		varchar(60) ,
+		passadmin		varchar(60)	,
 		nombre			varchar(60) ,
         email			text        ,
         foto            text        ,
@@ -17,6 +18,7 @@ $mysqli = new mysqli($HOST, $USER, $PASS, $DB);
     /* Crea la tabla si esta no existe */
     $mysqli->query("drop table if exists Test2");
     $registro = $mysqli->query("create table if not exists Test2 (	
+		id				int,
 		apellido		varchar(60) ,
 		nombre			varchar(60)  ,
 		fecha_nacimien	date ,
