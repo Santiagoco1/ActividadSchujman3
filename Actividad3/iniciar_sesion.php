@@ -21,8 +21,7 @@
                     {
                         $_SESSION['id']=$f['id'];
                         $_SESSION['user']=$f['user'];
-                        $_SESSION['rol']=$f['rol'];
-
+           
                         echo '<script>alert("BIENVENIDO ADMINISTRADOR")</script> ';
                         echo "<script>location.href='admin.php'</script>";
                     
@@ -32,7 +31,6 @@
                         {
                             $_SESSION['id']=$f['id'];
                             $_SESSION['user']=$f['user'];
-                            $_SESSION['rol']=$f['rol'];
             
                             header("Location: index2.php");
                         }
