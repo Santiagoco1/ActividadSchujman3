@@ -9,13 +9,13 @@
     <link rel="stylesheet" href="css/general.css">
     <link rel="stylesheet" href="css/header.css">
     <link rel="stylesheet" href="css/footer.css">
-    <link rel="stylesheet" href="css/animations.css">
     <link rel="stylesheet" href="css/registro.css">
+    <link rel="stylesheet" href="css/animations.css">
     <link rel="Shortcut Icon" href="images/dog.png">
     <script src="https://code.jquery.com/jquery-3.4.0.min.js"></script>
-   <!-- <script src="inciar_sesion.js" type="text/javascript"></script>-->
+    <script src="registro.js" type="text/javascript"></script>
 </head>
-<body> 
+<body>
     <header class="fadeInDown">
         <div class="title-container">
             <a href="https://ips.edu.ar/" target="_blank">
@@ -25,13 +25,15 @@
         </div>
     </header>
     <main>
-        <p class="sign">Iniciar Sesión</p>
-        <form  id="registro" name="registro">
-            <input type="text" name="email" placeholder="email..." required>
+        <p class="sign">Registrarse</p>
+        <form id="registro" name="registro">
+            <input type="text" name="nombre" placeholder="Username..." required>
             <input type="password" name="contra" placeholder="Password..." required>
-            <input class="btn btn-primary" type="submit" value="Aceptar">
-            <!--<button class="submit" type="submit" name="enviar" id="registro_enviar" ><span>Enviar </span></button>-->
-            <p class="forgot"><a href="#">Olvidó su contraseña?</p>          
+            <input type="password" name="contra" placeholder="Repetir password..." required>
+            <input type="email" name="email" placeholder="Email..." required>
+            <input type="file" id="img" name="img" accept="image/*" >
+            <button class="submit" type="submit" name="enviar" id="registro_enviar"><span>Enviar </span></button>
+            <p class="forgot"><a href="iniciar_sesion.html">Ya tienes una cuenta?</p>          
         </form>
     </main>
     <footer style="position: fixed; bottom: 0;">
@@ -41,7 +43,7 @@
     </footer>
     <?php
 		if(isset($_POST['submit'])){
-			require("Validar_user.php");
+			require("registro.php");
 		}
 	?>
 </body>
