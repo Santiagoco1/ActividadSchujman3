@@ -13,7 +13,7 @@
     <link rel="stylesheet" href="css/animations.css">
     <link rel="Shortcut Icon" href="images/dog.png">
     <script src="https://code.jquery.com/jquery-3.4.0.min.js"></script>
-    <script src="registro.js" type="text/javascript"></script>
+    <!--<script src="registro.js" type="text/javascript"></script>    Muy posiblemente lo eliminemos en el futuro-->
 </head>
 <body>
     <header class="fadeInDown">
@@ -26,13 +26,14 @@
     </header>
     <main>
         <p class="sign">Registrarse</p>
-        <form id="registro" name="registro">
+        <form action="registro.php" method="post" >
             <input type="text" name="nombre" placeholder="Username..." required>
             <input type="password" name="contra" placeholder="Password..." required>
             <input type="password" name="contra" placeholder="Repetir password..." required>
             <input type="email" name="email" placeholder="Email..." required>
             <input type="file" id="img" name="img" accept="image/*" >
-            <button class="submit" type="submit" name="enviar" id="registro_enviar"><span>Enviar </span></button>
+            <button class="submit" type="submit" name="enviar" id="registro_enviar" ><span>Enviar </span></button>
+            
             <p class="forgot"><a href="iniciar_sesion.html">Ya tienes una cuenta?</p>          
         </form>
     </main>

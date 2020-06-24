@@ -29,6 +29,7 @@
         <form action="Validar_user.php" method="post" >
             <input type="email" name="email" placeholder="email..." required>
             <input type="password" name="contra" placeholder="Password..." required>
+            <input
             <button class="submit" type="submit" name="enviar" id="registro_enviar" ><span>Enviar </span></button>
             <p class="forgot"><a href="#">Olvidó su contraseña?</p>          
         </form>

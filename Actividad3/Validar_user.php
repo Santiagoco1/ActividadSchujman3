@@ -13,9 +13,12 @@
             {
                 if($pass == $f['passadmin'])
                     {
-                        $_SESSION['id']=$f['id'];
-                        $_SESSION['user']=$f['user'];
-           
+                        /* Seteo las cookies  */
+                        
+                        setcookie("id", $f['orden']);
+                        setcookie("user", $f['nombre']);
+                        
+                        
                         echo '<script>alert("BIENVENIDO ADMINISTRADOR")</script> ';
                         echo "<script>location.href='admin-respuestas.php'</script>";
                     
@@ -23,8 +26,11 @@
                 else
                     if($pass == $f['contra'])
                         {
-                            $_SESSION['id']=$f['id'];
-                            $_SESSION['user']=$f['user'];
+                            /* Seteo las cookies  */
+                        
+                            setcookie("id", $f['orden']);
+                            setcookie("user", $f['nombre']);
+                        
                             echo '<script>alert("BIENVENIDO USER")</script> ';
                             echo "<script>location.href='user-formulario.html'</script>";
                     
