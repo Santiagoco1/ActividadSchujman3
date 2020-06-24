@@ -27,10 +27,9 @@
     <main>
         <p class="sign">Iniciar Sesión</p>
         <form action="Validar_user.php" method="post" >
-            <input type="text" name="email" placeholder="email..." required>
+            <input type="email" name="email" placeholder="email..." required>
             <input type="password" name="contra" placeholder="Password..." required>
-            <input class="btn btn-primary" type="submit" value="Aceptar">
-            <!--<button class="submit" type="submit" name="enviar" id="registro_enviar" ><span>Enviar </span></button>-->
+            <button class="submit" type="submit" name="enviar" id="registro_enviar" ><span>Enviar </span></button>
             <p class="forgot"><a href="#">Olvidó su contraseña?</p>          
         </form>
     </main>
