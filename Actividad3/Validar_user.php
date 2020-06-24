@@ -32,7 +32,7 @@
                             setcookie("user", $f['nombre']);
                         
                             echo '<script>alert("BIENVENIDO USER")</script> ';
-                            echo "<script>location.href='user-formulario.html'</script>";
+                            echo "<script>location.href='user-formulario.php'</script>";
                     
                     /*        header("Location: user-formulario.html");*/
                         }
