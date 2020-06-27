@@ -1,9 +1,25 @@
 <?php
-include "var.inc";
 
+session_start();
+if (@!$_COOKIE['user']) {
+	header("Location:iniciar_sesion.php");
+}
+include "var.inc";
+echo "123";
 $mysqli = new mysqli($HOST, $USER, $PASS, $DB);
+	//echo '<script>alert("ID:' $_COOKIE["id"] ' ")</script> ';
+	$ID = $_COOKIE["id"];
+
+	$result = mysqli_query($mysqli,  "SELECT * from $TABLA2 WHERE id = $ID" );
+
+   if($f = mysqli_fetch_assoc($result))
+		{
+			echo '<script>alert("Usted ya ha enviado un formulario. Solo se permite uno por usuario.")</script> ';
+			echo "<script>location.href='user-form.php'</script>";
+		}
+
 	
-	/* Somos conscientes de que se puede poner un valor default en la tabla, pero por como hicimos la funcion que toma los datos, aun cuando estos esten vacios, los llena con "" */
+/* Somos conscientes de que se puede poner un valor default en la tabla, pero por como hicimos la funcion que toma los datos, aun cuando estos esten vacios, los llena con "" */
 	$apellido="".$_POST['apellido']."";
 	if (strcmp($apellido, "") == 0	) 		$apellido="--";
 	
@@ -55,6 +71,6 @@ $mysqli = new mysqli($HOST, $USER, $PASS, $DB);
 	
 	$arrayEnfermedades ="".$_POST['enfermedades1']." ".$_POST['enfermedades2']." ".$_POST['enfermedades3']." ".$_POST['enfermedades4']."";
 	if(strcmp ($arrayEnfermedades, "   ") == 0)		$arrayEnfermedades="--";
-	$mysqli->query("insert into $TABLA (apellido, nombre, dni, domicilio, fecha_nacimien ,peso,grupo_sanguineo , factor ,altura , email , telefono_fijo, telefono_celu,	telefono_altern , talle_zapato,  medicamentos,  nro_emer, nro_obrasocial , enfermedades, color_fav, sexo ) values ('$apellido','$nombre','".$_POST['dni']."','$domicilio','".$_POST['fecha_nacimien']."' ,'".$_POST['peso']."' , '$grupo_sanguineo' , '$factor' , '".$_POST['altura']."' , '$email' , '$telefono_fijo' , '$telefono_celu' , '$telefono_altern' , '".$_POST['talle_zapato']."' , '$medicamentos' , ' $nro_emer','$nro_obrasocial' , '$arrayEnfermedades' , '$color_fav' , '$sexo' )" ); 
+	$mysqli->query("insert into $TABLA2 (id, apellido, nombre, dni, domicilio, fecha_nacimien ,peso,grupo_sanguineo , factor ,altura , email , telefono_fijo, telefono_celu,	telefono_altern , talle_zapato,  medicamentos,  nro_emer, nro_obrasocial , enfermedades, color_fav, sexo ) values ('$ID',  '$apellido', '$nombre', '".$_POST['dni']."','$domicilio','".$_POST['fecha_nacimien']."' ,'".$_POST['peso']."' , '$grupo_sanguineo' , '$factor' , '".$_POST['altura']."' , '$email' , '$telefono_fijo' , '$telefono_celu' , '$telefono_altern' , '".$_POST['talle_zapato']."' , '$medicamentos' , ' $nro_emer','$nro_obrasocial' , '$arrayEnfermedades' , '$color_fav' , '$sexo' )" ); 
 
 ?>

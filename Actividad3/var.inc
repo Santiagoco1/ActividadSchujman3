@@ -3,5 +3,6 @@ $HOST = "localhost";
 $USER = "unouno";
 $PASS = "unobase";
 $DB   = "uno";
-$TABLA = "Tablon";
+$TABLA = "Test1";
+$TABLA2 = "Test2";
 ?>

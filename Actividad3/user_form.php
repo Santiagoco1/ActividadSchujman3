@@ -31,42 +31,36 @@
             <a href="https://ips.edu.ar/" target="_blank">
                 <img src="images/IPS_Logo.png" alt="IPS-logo">
             </a>
-            <h1 style="color: white;">Actividad 3</h1>
+            <h1 style="color: white;">Formulario</h1>
         </div>
         <div class="links">
             <div class="img-container">
-                <a href="user-formulario.html">
-                    <img src="images/form.png" alt="">                
-                    <h6>Formulario</h6>
+                <a href="user_profile.php">   
+                    <img src="images/profile.png" alt="respuestas">
+                    <h6>Perfil</h6>
                 </a>
             </div>
             <div class="img-container">
-                <a href="user-respuesta.php">   
-                    <img src="images/respuestas.png" alt="respuestas">
-                    <h6>Respuesta</h6>
-                </a>
-            </div>
-            <div class="img-container">
-                <a href="index.html">
-                    <img src="images/cerrar.png" alt="actividad1">
-                    <h6>Cerrar</h6>
+                <a href="sign_out.php">
+                    <img src="images/logOut.png" alt="actividad1">
+                    <h6>Salir</h6>
                 </a>
             </div>
         </div>
     </header>
     
     <main>
-        <form  id="registro" name="registro">
+        <form action="guardar.php" method="post" id="registro" name="registro">
             <div class="form-title" >
-                <h1>Ficha Médica</h1>
+                <h1>Datos</h1>
             <div class="form-body"  >
                 <!-- Nombre -->
                 <div class="nombre">
                     <h3>Nombre</h3>
                     <input type="text" name="nombre"  style="grid-area: nombre;" placeholder="Tu nombre..." >
                 </div>
-                <!-- Apellido -->
-                <div class="apellido" style="grid-area: apellido;">
+                <!-- Apellido -->                            
+                <div class="apellido" style="grid-area: apell .                                   ido;">
                     <h3>Apellido</h3>
                     <input nametype="text" name="apellido" placeholder="Tu apellido...">
                 </div>
@@ -230,7 +224,7 @@
                 </div>
             </div>
             <div class="form-button" style="background-color: #13315c; text-align: center;">
-                <button class="button" type="submit" name="enviar" id="registro_enviar" style="vertical-align:middle"><span>Enviar </span></button>
+                <button class="button" class="submit" type="submit" name="enviar" id="registro_enviar" style="vertical-align:middle"><span>Enviar </span></button>
             </div>
         </form>
     </main>

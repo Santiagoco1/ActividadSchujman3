@@ -1,0 +1,14 @@
+<?php 
+	session_start();
+	if($_COOKIE['user'])
+		{
+			unset($_COOKIE['user']);
+			unset($_COOKIE['id']);
+			session_destroy();
+			header("location:index.html");
+		}
+	else
+		{
+			header("location:index.html");
+		}
+?>

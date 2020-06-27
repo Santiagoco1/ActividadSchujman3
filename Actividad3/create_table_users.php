@@ -3,12 +3,15 @@ include "var.inc";
 
 $mysqli = new mysqli($HOST, $USER, $PASS, $DB);
 	/*Crea la tabla si esta no existe. La tabulacion es para que quede mas lindo. En total 24 */
-    $mysqli->query("drop table if exists Test1");
-    $registro = $mysqli->query("create table if not exists Test1 (	
+    $mysqli->query("drop table if exists $TABLA");
+    $registro = $mysqli->query("create table if not exists $TABLA (	
+		nombre			varchar(60) ,
+		cuantos_logueos	int			,
+		ultimo_logueo	DATE		,
+        confirmacion	int		,
 		contra  		varchar(60) ,
 		passadmin		varchar(60)	,
-		nombre			varchar(60) ,
-        email			text        ,
+		email			text        ,
         foto            text        ,
         
         cuando	 		timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP(),
@@ -16,10 +19,10 @@ $mysqli = new mysqli($HOST, $USER, $PASS, $DB);
     )");
     
     /* Crea la tabla si esta no existe */
-    $mysqli->query("drop table if exists Test2");
-    $registro = $mysqli->query("create table if not exists Test2 (	
+    $mysqli->query("drop table if exists $TABLA2");
+    $registro = $mysqli->query("create table if not exists $TABLA2 (	
 		id				  int,
-    apellido		varchar(60) ,
+    	apellido		varchar(60) ,
 		nombre			varchar(60)  ,
 		fecha_nacimien	date ,
 		dni				  int  ,

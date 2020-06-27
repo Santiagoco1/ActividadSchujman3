@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Actividad IV</title>
+    <title>Exercise IV</title>
     <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
     <link rel="stylesheet" href="css/var.css">
     <link rel="stylesheet" href="css/general.css">
@@ -13,7 +13,7 @@
     <link rel="stylesheet" href="css/animations.css">
     <link rel="Shortcut Icon" href="images/dog.png">
     <script src="https://code.jquery.com/jquery-3.4.0.min.js"></script>
-    <!--<script src="registro.js" type="text/javascript"></script>    Muy posiblemente lo eliminemos en el futuro-->
+    <script src="registry.js" type="text/javascript"></script>  
 </head>
 <body>
     <header class="fadeInDown">
@@ -21,20 +21,18 @@
             <a href="https://ips.edu.ar/" target="_blank">
                 <img src="images/IPS_Logo.png" alt="IPS-logo">
             </a>
-            <h1 style="color: white;">Actividad VI: El formulario contraataca</h1>
-        </div>
+            <h1 style="color: white;">Exercise IV: The Form Strikes Back</h1>
+        </div>s
     </header>
     <main>
-        <p class="sign">Registrarse</p>
-        <form action="registro.php" method="post" >
+        <p class="sign">Sing Up</p>
+        <form action="registro.php" method="post" id="register-form" onSubmit = "return checkPassword(this)">
             <input type="text" name="nombre" placeholder="Username..." required>
-            <input type="password" name="contra" placeholder="Password..." required>
-            <input type="password" name="contra" placeholder="Repetir password..." required>
-            <input type="email" name="email" placeholder="Email..." required>
-            <input type="file" id="img" name="img" accept="image/*" >
-            <button class="submit" type="submit" name="enviar" id="registro_enviar" ><span>Enviar </span></button>
-            
-            <p class="forgot"><a href="iniciar_sesion.html">Ya tienes una cuenta?</p>          
+            <input type="password" name="contra" id="contra" placeholder="Password..." required>
+            <input type="password" name="contra2" id="contra2" placeholder="Repetir password..." required>
+            <input type="email" name="email" placeholder="Email..." required> 
+            <button class="submit" type="submit" name="enviar" id="registro_enviar" ><span>Send </span></button>
+            <p class="forgot"><a href="sing-in.php">Do you already have an account?</p>          
         </form>
     </main>
     <footer style="position: fixed; bottom: 0;">
@@ -43,9 +41,17 @@
         <h3>Juliana Consolati</h3>
     </footer>
     <?php
-		if(isset($_POST['submit'])){
+		if(isset($_POST['submit']))
 			require("registro.php");
-		}
-	?>
+    ?>
+    
+    <script>
+        $('#password, #confirm_password').on('keyup', function () {
+        if ($('#password').val() == $('#confirm_password').val()) {
+            $('#message').html('Matching').css('color', 'green');
+        } else 
+            $('#message').html('Not Matching').css('color', 'red');
+        });
+    </script>
 </body>
 </html>

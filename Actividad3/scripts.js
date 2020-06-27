@@ -19,14 +19,14 @@ $(document).ready(function () {
     // Sorta magic numbers based on size of the native UI thumb
     bubble.style.left = `calc(${newVal}% - (${8 - newVal * 0.15}px))`;
     }
-
+    /*
     $("#registro").submit(function(e) {
         e.preventDefault();
         window.alert($("form[id='registro']") .serialize());
         $.post("guardar.php",$("form[id='registro']") .serialize(), function(data) {
             $(":input").val('');
         });
-    });
+    });*/
 });
 
 function bloqueo(resp){
