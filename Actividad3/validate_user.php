@@ -40,6 +40,7 @@
                         $mysqli->query("UPDATE $TABLA SET ultimo_logueo = '$ultimo_logueo' WHERE orden = '$orden' ");
                         if($pass == $f['passadmin'])
                         {
+                            setcookie("admin", 1);
                             echo '<script>alert("BIENVENIDO ADMINISTRADOR")</script> ';
                             echo "<script>location.href='admin_responses.php'</script>";
                         }

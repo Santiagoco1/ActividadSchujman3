@@ -3,7 +3,7 @@
     <?php
 	session_start();
 	if (@!$_COOKIE['user']  ) {
-		header("Location:iniciar_sesion.php");
+		header("Location:sign_in.php");
 	}
     ?>
 <head>
@@ -60,7 +60,7 @@
                         <div class="row-fluid">
                     
                             <?php
-
+                                include "var.inc";
                                 $mysqli = new mysqli($HOST, $USER, $PASS, $DB);
                                 $sql=("SELECT * FROM $TABLA");
 
@@ -79,37 +79,39 @@
                             
                                 while($arreglo=mysqli_fetch_array($query))
                                 {
-                                    echo "<tr class='success'>";
+                                    echo "<tr class=' '>";
                                         echo "<td>$arreglo[0]</td>";
                                         echo "<td>$arreglo[1]</td>";
                                         echo "<td>$arreglo[2]</td>";
                                         if( $arreglo[3] == 0 )
-                                            echo "<td>"No confirmado"</td>";
+                                            echo "<td> No confirmado </td>";
                                         else
                                             if( $arreglo[3] == 1)
                                             {
-                                                echo "<td>"Desbloqueado"</td>";
+                                                echo "<td> Desbloqueado </td>";
                                                 /* echo "<td> <button onclick = '  " $mysqli->query("UPDATE $TABLA SET confirmacion = 2  WHERE orden = $arreglo[11] ");
-                                                                                " '> <img src='images/CO.jpeg' class='img-rounded'> </td>";
+                                                                                " '> <img src='images/bloquear.png' class='img-rounded'> </td>";
                                                 */
                                             }
                                             else
                                             {
-                                                echo "<td>"Bloqueado"</td>";
+                                                echo "<td> Bloqueado </td>";
                                                 /* echo "<td> <button onclick = '  " $mysqli->query("UPDATE $TABLA SET confirmacion = 1  WHERE orden = $arreglo[11] ");
-                                                                                " '> <img src='images/CO.jpeg' class='img-rounded'> </td>";
-                                                */
+                                                                                " '> <img src='desbloquear.png' class='img-rounded'> </td>";
+                                                */     
                                             }
+                                            
                                     echo "</tr>";
                                 }
-
+                                
                                 echo "</table>";
                             ?>        
                         </div>	
                     </div>	
                 </div>
             </div>
-        </div>             
+        </div>       
+        <!-- poner que significa cada cosa del status -->      
     </main>
     
     <footer style="position: fixed; bottom: 0;">

@@ -3,7 +3,7 @@
 <?php
 	session_start();
 	if ($_COOKIE['user']  ) {
-        if($_COOKIE['passadmin'])
+        if($_COOKIE['admin'])
             header("Location:admin_responses.php");
         else
             header("Location:user_profile.php");

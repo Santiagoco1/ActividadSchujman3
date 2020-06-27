@@ -3,8 +3,10 @@
 		{
 			setcookie("user");
 			setcookie("id");
+			setcookie("admin");
 			unset($_COOKIE['user']);
 			unset($_COOKIE['id']);
+			unset($_COOKIE['admin']);
 			header("location:index.html");
 		}
 	else
