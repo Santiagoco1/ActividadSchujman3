@@ -19,14 +19,6 @@ $(document).ready(function () {
     // Sorta magic numbers based on size of the native UI thumb
     bubble.style.left = `calc(${newVal}% - (${8 - newVal * 0.15}px))`;
     }
-    /*
-    $("#registro").submit(function(e) {
-        e.preventDefault();
-        window.alert($("form[id='registro']") .serialize());
-        $.post("guardar.php",$("form[id='registro']") .serialize(), function(data) {
-            $(":input").val('');
-        });
-    });*/
 });
 
 function bloqueo(resp){
@@ -43,3 +35,11 @@ function desbloqueo(resp){
         respuesta.style.opacity= "1";
         respuesta.style.overflow = "visible";       
 }
+
+$(document).ready(function () {
+    $("#registro").submit(function (e) {
+        e.preventDefault();
+        $("#registro_enviar").attr("disabled", true);
+        return true;
+    });
+});

@@ -66,6 +66,7 @@ form{
     color: rgba(255, 255, 255, 0.76);
     padding-top: 15px;
     text-align: center;
+    font-size: small;
 }
 
 @media (max-width: 600px) {

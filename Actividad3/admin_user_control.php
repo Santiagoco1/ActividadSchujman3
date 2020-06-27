@@ -1,5 +1,11 @@
 <!DOCTYPE html>
 <html lang="es">
+    <?php
+	session_start();
+	if (@!$_COOKIE['user']  ) {
+		header("Location:sign_in.php");
+	}
+    ?>
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -45,66 +51,67 @@
     <main>
         
         <div class="row">              
-                <div class="span12">
+            <div class="span12">
+                <div class="caption">
+                    <h2> Registered User Management</h2>	
+                    <div class="well well-small">
+                        <hr class="soft"/>
+                        <h4>Users Table</h4>
+                        <div class="row-fluid">
+                    
+                            <?php
 
-                    <div class="caption">
-                
-<!--///////////////////////////////////////////////////Empieza cuerpo del documento interno////////////////////////////////////////////(re copiado)-->
-                        <h2> Registered User Management</h2>	
-                        <div class="well well-small">
-                            <hr class="soft"/>
-                            <h4>Users Table</h4>
-                            <div class="row-fluid">
-                        
-                                <?php
+                                $mysqli = new mysqli($HOST, $USER, $PASS, $DB);
+                                $sql=("SELECT * FROM $TABLA");
 
-                                    $mysqli = new mysqli($HOST, $USER, $PASS, $DB);
-                                    $sql=("SELECT * FROM $TABLA");
+                                $query=mysqli_query($mysqli,$sql);
 
-                                    $query=mysqli_query($mysqli,$sql);
-
-                                    echo "<table border='1'; class='table table-hover';>";
-                                        echo "<tr class='warning'>";
-                                            echo "<td>User</td>";
-                                            echo "<td>How many times the user log in</td>";
-                                            echo "<td>Last log in</td>";
-                                            echo "<td>Status</td>";
-                                            echo "<td>Bloqueo/Desbloqueo</td>";
-                                            
-                                        echo "</tr>";  
-                                ?>
-
-                                <?php 
-                                    while($arreglo=mysqli_fetch_array($query)){
-                                        echo "<tr class='success'>";
-                                            echo "<td>$arreglo[0]</td>";
-                                            echo "<td>$arreglo[1]</td>";
-                                            echo "<td>$arreglo[2]</td>";
-                                            if( $arreglo[3] == 0 )
-                                                echo "<td>"No confirmado"</td>";
-                                            else
-                                                if( $arreglo[3] == 1)
-                                                    echo "<td>"Desbloqueado"</td>";
-                                                else
-                                                    echo "<td>"Bloqueado"</td>";
-                                            echo "<td> <button onclick = '$arreglo[3] = 2 '
-                                            ><img src='images/CO.jpeg' class='img-rounded'></td>";
-                                            
-                                        echo "</tr>";
-                                    }
-
-                                    echo "</table>";
-
+                                echo "<table border='1'; class='table table-hover';>";
+                                    echo "<tr class='warning'>";
+                                        echo "<td>User</td>";
+                                        echo "<td>How many times the user log in</td>";
+                                        echo "<td>Last log in</td>";
+                                        echo "<td>Status</td>";
+                                        echo "<td>Blocked/Unblocked</td>";
                                         
-                                ?>
-                                                            
-                            </div>	
+                                    echo "</tr>";  
+                            
+                            
+                                while($arreglo=mysqli_fetch_array($query))
+                                {
+                                    echo "<tr class='success'>";
+                                        echo "<td>$arreglo[0]</td>";
+                                        echo "<td>$arreglo[1]</td>";
+                                        echo "<td>$arreglo[2]</td>";
+                                        if( $arreglo[3] == 0 )
+                                            echo "<td>"No confirmado"</td>";
+                                        else
+                                            if( $arreglo[3] == 1)
+                                            {
+                                                echo "<td>"Desbloqueado"</td>";
+                                                /* echo "<td> <button onclick = '  " $mysqli->query("UPDATE $TABLA SET confirmacion = 2  WHERE orden = $arreglo[11] ");
+                                                                                " '> <img src='images/CO.jpeg' class='img-rounded'> </td>";
+                                                */
+                                            }
+                                            else
+                                            {
+                                                echo "<td>"Bloqueado"</td>";
+                                                /* echo "<td> <button onclick = '  " $mysqli->query("UPDATE $TABLA SET confirmacion = 1  WHERE orden = $arreglo[11] ");
+                                                                                " '> <img src='images/CO.jpeg' class='img-rounded'> </td>";
+                                                */
+                                            }
+                                    echo "</tr>";
+                                }
+
+                                echo "</table>";
+                            ?>        
                         </div>	
-                    </div>
+                    </div>	
                 </div>
             </div>
-                
+        </div>             
     </main>
+    
     <footer style="position: fixed; bottom: 0;">
         <h3>Santiago C&oacute;</h3>
         <h3>Franco Gozzerino</h3>

@@ -3,7 +3,7 @@
 
 <?php
 	session_start();
-	if (@!$_COOKIE['user']) {
+	if (@!$_COOKIE['user']  ) {
 		header("Location:iniciar_sesion.php");
 	}
 ?>
@@ -21,7 +21,7 @@
     <link rel="stylesheet" href="css/animations.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel="Shortcut Icon" href="images/dog.png">
-    <script src="https://code.jquery.com/jquery-3.4.0.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"> 
     <script src="scripts.js" type="text/javascript"></script>
 </head>
 
@@ -50,7 +50,7 @@
     </header>
     
     <main>
-        <form action="guardar.php" method="post" id="registro" name="registro">
+        <form action="save.php" method="post" id="registro" name="registro">
             <div class="form-title" >
                 <h1>Data</h1>
             <div class="form-body"  >
@@ -174,7 +174,7 @@
                         <input  type="checkbox" value="Otaku" name="enfermedades3">
                         <label  for="Otaku">Otaku</label>
                         <input  type="checkbox" value="Ninguna"  name="enfermedades4">
-                        <label  for="ninguna">None one</label>
+                        <label  for="ninguna">None</label>
                     </div>
                 </div>
                 <!--Medicamentos-->
@@ -199,7 +199,7 @@
                 </div>
                 <!-- Telefono Fijo -->
                 <div class="tel" style="grid-area: tel;">
-                    <h3>Landline</h3>
+                    <h3>Phone number</h3>
                     <input type="tel" name="telefono_fijo" id="phone" name="tel" placeholder="123-456-7890" pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}" required><br><br>
                 </div>
                 <!-- Email -->
@@ -209,7 +209,7 @@
                 </div>
                 <!-- Telefono Alternativo -->
                 <div class="tel-alt" style="grid-area: tel-alt;">
-                    <h3>Landline Alt.</h3>
+                    <h3>Alt. Phone number</h3>
                     <input type="tel" name="telefono_altern" id="phone" name="tel-alt" placeholder="123-456-7890" pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}" required><br><br>
                 </div>
                 <!-- Color favorito -->
@@ -234,6 +234,5 @@
         <h3>Franco Gozzerino</h3>
         <h3>Juliana Consolati</h3>
     </footer>
-
 </body>
 </html>
