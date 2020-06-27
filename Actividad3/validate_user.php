@@ -19,9 +19,11 @@
                 setcookie("id", $orden );
                 
                 $cuantos_logueos = $f['cuantos_logueos'] + 1 ;
-                echo '<script>alert("' . $cuantos_logueos .'")</script> ';
-                $mysqli->query("UPDATE $TABLA SET cuantos_logueos = '$cuantos_logueos'  WHERE email = '$orden' ");
+                $ultimo_logueo = date('Y-m-d H:i:s');
 
+                
+                $mysqli->query("UPDATE $TABLA SET cuantos_logueos = $cuantos_logueos WHERE orden = '$orden' ");
+                $mysqli->query("UPDATE $TABLA SET ultimo_logueo = '$ultimo_logueo' WHERE orden = '$orden' ");
                 if($pass == $f['passadmin'])
                 {
                     echo '<script>alert("BIENVENIDO ADMINISTRADOR")</script> ';
