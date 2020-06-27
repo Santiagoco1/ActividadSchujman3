@@ -1,5 +1,11 @@
 <!DOCTYPE html>
 <html lang="es">
+<?php
+	session_start();
+	if (@!$_COOKIE['user']  ) {
+		header("Location:iniciar_sesion.php");
+	}
+?>
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -29,9 +35,9 @@
                 </a>
             </div>
             <div class="img-container">
-                <a href="admin_user-control.html">
-                    <img src="images/responses.png" alt="">                
-                    <h6>User Control</h6>
+                <a href="admin_user_control.php">
+                    <img src="images/userControl.png" alt="">                
+                    <h6>Control</h6>
                 </a>
             </div>
             <div class="img-container">
@@ -56,13 +62,17 @@
             if ($f = mysqli_fetch_assoc($result)) {
             ?>
                 <div class="card">
+                    <div class="card-title">
+                        <?php
+                            echo "<h1>". $f["nombre"]."</h1>";
+                        ?>
+                    </div>
                     <div class="card-body">
               
             <?php
-                echo "<h3><b>Name: </b> ". $f["nombre"]."</h3>";
-                echo "<h3><b>email: </b> ". $f["email"]."</h3>";
+                echo "<h3><b>Email: </b> ". $f["email"]."</h3>";
+                echo "<h3><b>Pass: </b> ". $f["passadmin"]."</h3>";
             ?>
-                    
                     </div>
                 </div>
             <?php
@@ -72,7 +82,7 @@
             ?>
         </div>
     </main>
-    <footer>
+    <footer style="position: fixed; bottom: 0;">
         <h3>Santiago C&oacute;</h3>
         <h3>Franco Gozzerino</h3>
         <h3>Juliana Consolati</h3>

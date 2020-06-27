@@ -1,5 +1,11 @@
 <!DOCTYPE html>
 <html lang="es">
+<?php
+	session_start();
+	if (@!$_COOKIE['user']  ) {
+		header("Location:sign_in.php");
+	}
+?>
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -31,7 +37,7 @@
             <div class="img-container">
                 <a href="admin_user_control.html">
                     <img src="images/userControl.png" alt="">                
-                    <h6>User Control</h6>
+                    <h6>Control</h6>
                 </a>
             </div>
             <div class="img-container">
@@ -54,6 +60,11 @@
                 while ( $rows = mysqli_fetch_assoc($result) ) {
                     ?>
                         <div class="card">
+                            <div class="card-title">
+                                <?php
+                                    echo "<h1>User ". $rows["id"]."</h1>";
+                                ?>
+                            </div>
                             <div class="card-body">
                                 <?php
                                 echo "<h3><b>Name: </b> ". $rows["nombre"]."</h3>";

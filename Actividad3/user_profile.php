@@ -4,7 +4,7 @@
 <?php
 	session_start();
 	if (@!$_COOKIE['user']) {
-		header("Location:iniciar_sesion.php");
+		header("Location:sing_in.php");
 	}
 ?>
 
@@ -18,6 +18,7 @@
     <link rel="stylesheet" href="css/header.css">
     <link rel="stylesheet" href="css/footer.css">
     <link rel="stylesheet" href="css/animations.css">
+    <link rel="stylesheet" href="css/respuestas.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel="Shortcut Icon" href="images/dog.png">
     <script src="https://code.jquery.com/jquery-3.4.0.min.js"></script>
@@ -33,13 +34,13 @@
         </div>
         <div class="links">
             <div class="img-container">
-                <a href="user-form.php">   
+                <a href="user_form.php">   
                     <img src="images/form.png" alt="respuestas">
-                    <h6>Form</h6>
+                    <h6 style="margin-left: -6px">Form</h6>
                 </a>
             </div>
             <div class="img-container">
-                <a href="sign.php">
+                <a href="sign_out.php">
                     <img src="images/logOut.png" alt="actividad1">
                     <h6>Log Out</h6>
                 </a>
@@ -59,18 +60,19 @@
             if ($f = mysqli_fetch_assoc($result))
             {
             ?>
-                    <div class="card">
-                        <div class="card-title">
-                            <h1>Profile</h1>
-                        </div>
-                        <div class="card-body">
-              
-            <?php
-                    echo "<h3><b>Name: </b> ". $f["nombre"]."</h3>";
-                    echo "<h3><b>Email: </b> ". $f["email"]."</h3>";
+                <div class="card">
+                    <div class="card-title">
+                        <?php
+                            echo "<h1>". $f["nombre"]."</h1>";
+                        ?>
+                    </div>
+                    <div class="card-body">
+            <?php       
+                        echo "<h3><b>Email: </b> ". $f["email"]."</h3>";
+                        echo "<h3><b>Pass: </b> ". $f["contra"]."</h3>";
             ?>                    
-                        </div>
-                   </div>
+                    </div>
+                </div>
             <?php
             }
             ?>

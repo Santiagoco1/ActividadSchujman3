@@ -1,6 +1,4 @@
 <?php
-
-
     include "var.inc";
             $mysqli = new mysqli($HOST, $USER, $PASS, $DB);
             $sql = mysqli_query($mysqli,"SELECT * FROM $TABLA WHERE email = '".$_POST['email']."' " );
@@ -20,7 +18,7 @@
                             <div>
                                 <h2 style='color:black !important;'> Thank you for registering for Cute Data Protect.</h2>
                                 <h2 style='color:black !important;'> Confirm your account! </h2>  
-                                <a  style='font-size: 20px !important; color:#f6511d !important;' href='https://www.agssoft.ar/UNO/confirmation.php?email="  . $para . "&token=" . $token .  "&motive=1'> Haga click aqui para comenzar!</a> 
+                                <a  style='font-size: 20px !important; color:#f6511d !important;' href='https://www.agssoft.ar/UNO/confirmation.php?email="  . $para . "&token=" . $token .  "&motive=3'> Haga click aqui para comenzar!</a> 
                             </div>
                             <div style='color:black !important;'> Contact: grupoUNO@gmail.com - Group One. </div> 
                         </body>

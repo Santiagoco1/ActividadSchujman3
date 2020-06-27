@@ -12,6 +12,7 @@ $mysqli = new mysqli($HOST, $USER, $PASS, $DB);
 		contra  		varchar(60) ,
 		passadmin		varchar(60)	,
 		email			text        ,
+		token			int			,
         foto            text        ,
         
         cuando	 		timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP(),

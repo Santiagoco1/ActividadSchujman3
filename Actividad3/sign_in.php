@@ -1,5 +1,14 @@
 <!DOCTYPE html>
 <html lang="es">
+<?php
+	session_start();
+	if ($_COOKIE['user']  ) {
+        if($_COOKIE['passadmin'])
+            header("Location:admin_responses.php");
+        else
+            header("Location:user_profile.php");
+	}
+?>
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -24,11 +33,13 @@
         </div>
     </header>
     <main>
-        <p class="sign">Enter your email</p>
-        <p class="forgot" style="font-size: 15px"> For us to send you an email confirmation to change your password.<p>
-        <form action="user_change_pass.php" method="post" >
-            <input type="email" name="email" placeholder="Your Email..." required>
+        <p class="sign">Sign In</p>
+        <form action="validate_user.php" method="post" >
+            <input type="email" name="email" placeholder="email..." required>
+            <input type="password" name="contra" placeholder="Password..." required>
             <button class="submit" type="submit" name="enviar" id="registro_enviar" ><span>Send </span></button>
+            <p class="forgot"><a href="change_pass.php">Forgot your password?</p>  
+            <p class="forgot" style="padding-top: 0px"><a href="sign_up.php">You don't have an account?</p>          
         </form>
     </main>
     <footer style="position: fixed; bottom: 0;">

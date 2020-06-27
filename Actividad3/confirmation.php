@@ -19,18 +19,34 @@
                 unset($token);
             }
         }
+        if(isset($_GET['motive']))
+        {
+            $motive = $_GET['motive'];
+            if($motive == '')
+            {
+                unset($motive);
+            }
+        }
+        
         if(!empty($email) && !empty($token))
         {   
-            echo '<script>alert("' . $email . ' ")</script> ';
-            
-            if($mysqli->query("UPDATE $TABLA SET confirmacion = 1  WHERE email = '$email' ") === true){ 
-                echo '<script>alert("Funco")</script> ';
-                     
-            } else { 
-                echo '<script>alert("No funco")</script> ';
-                     
-            }  
-            echo "<script>location.href='sing_in.php'</script>";
+            if($motive == 0 )
+            {
+                $mysqli->query("UPDATE $TABLA SET confirmacion = 1  WHERE email = '$email' ");
+                echo "<script>location.href='sign_in.php'</script>";
+            }
+            if ($motive == 1)
+            {
+                setcookie("token", $token);
+                setcookie("email", $email);
+                echo "<script>location.href='new_pass.php'</script>";
+            }
+            /* Dejo el motive 2 por si en algun momento agregamos la funcion para cambiar la contra de admin*/
+            if ( $motive == 3)
+            {
+                setcookie("token", $token);
+                echo "<script>location.href='new_email.php'</script>";
+            }
         }
     }
     
