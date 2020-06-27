@@ -33,13 +33,13 @@
         </div>
         <div class="links">
             <div class="img-container">
-                <a href="user-form.php">   
+                <a href="user_form.php">   
                     <img src="images/form.png" alt="respuestas">
                     <h6>Form</h6>
                 </a>
             </div>
             <div class="img-container">
-                <a href="sign.php">
+                <a href="sign_out.php">
                     <img src="images/logOut.png" alt="actividad1">
                     <h6>Log Out</h6>
                 </a>
