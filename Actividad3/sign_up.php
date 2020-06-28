@@ -22,17 +22,17 @@
                 <img src="images/IPS_Logo.png" alt="IPS-logo">
             </a>
             <h1 style="color: white;">Exercise IV: The Form Strikes Back</h1>
-        </div>s
+        </div>
     </header>
     <main>
-        <p class="sign">Sing Up</p>
-        <form action="registro.php" method="post" id="register-form" onSubmit = "return checkPassword(this)">
+        <p class="sign">Sign Up</p>
+        <form action="registry.php" method="post" id="register-form"  onSubmit = "return checkPassword(this)">
             <input type="text" name="nombre" placeholder="Username..." required>
             <input type="password" name="contra" id="contra" placeholder="Password..." required>
-            <input type="password" name="contra2" id="contra2" placeholder="Repetir password..." required>
+            <input type="password" name="contra2" id="contra2" placeholder="Repeat Password..." required>
             <input type="email" name="email" placeholder="Email..." required> 
             <button class="submit" type="submit" name="enviar" id="registro_enviar" ><span>Send </span></button>
-            <p class="forgot"><a href="sing-in.php">Do you already have an account?</p>          
+            <p class="forgot"><a href="sign_in.php">Do you already have an account?</p>          
         </form>
     </main>
     <footer style="position: fixed; bottom: 0;">
@@ -42,16 +42,25 @@
     </footer>
     <?php
 		if(isset($_POST['submit']))
-			require("registro.php");
+			require("registry.php");
     ?>
     
     <script>
-        $('#password, #confirm_password').on('keyup', function () {
-        if ($('#password').val() == $('#confirm_password').val()) {
-            $('#message').html('Matching').css('color', 'green');
-        } else 
-            $('#message').html('Not Matching').css('color', 'red');
-        });
+            function checkPassword(form) { 
+                contra = form.contra.value; 
+                contra2 = form.contra2.value; 
+                if (contra == '') 
+                    alert ("Please enter Password"); 
+                else if (contra2 == '') 
+                    alert ("Please enter confirm password");     
+                else if (contra != contra2) { 
+                    alert ("\nPassword did not match: Please try again...") 
+                    return false; 
+                } 
+                else{ 
+                    return true; 
+                } 
+            } 
     </script>
 </body>
 </html>

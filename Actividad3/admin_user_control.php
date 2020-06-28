@@ -60,7 +60,7 @@
                         <div class="row-fluid">
                     
                             <?php
-
+                                include "var.inc";
                                 $mysqli = new mysqli($HOST, $USER, $PASS, $DB);
                                 $sql=("SELECT * FROM $TABLA");
 
@@ -72,44 +72,57 @@
                                         echo "<td>How many times the user log in</td>";
                                         echo "<td>Last log in</td>";
                                         echo "<td>Status</td>";
-                                        echo "<td>Blocked/Unblocked</td>";
+                                        echo "<td>Block/Unblock</td>";
                                         
                                     echo "</tr>";  
                             
                             
                                 while($arreglo=mysqli_fetch_array($query))
                                 {
-                                    echo "<tr class='success'>";
+                                    echo "<tr class=' '>";
                                         echo "<td>$arreglo[0]</td>";
                                         echo "<td>$arreglo[1]</td>";
                                         echo "<td>$arreglo[2]</td>";
                                         if( $arreglo[3] == 0 )
-                                            echo "<td>"No confirmado"</td>";
+                                            echo "<td> No confirmado </td>";
                                         else
-                                            if( $arreglo[3] == 1)
-                                            {
-                                                echo "<td>"Desbloqueado"</td>";
-                                                /* echo "<td> <button onclick = '  " $mysqli->query("UPDATE $TABLA SET confirmacion = 2  WHERE orden = $arreglo[11] ");
-                                                                                " '> <img src='images/CO.jpeg' class='img-rounded'> </td>";
-                                                */
+                                            if( $arreglo[3] == 1){
+                                                echo "<td> Desbloqueado </td>";
+                                                echo "<td>   
+                                                        <form action='block_unblock.php' method='post' >
+                                                            <input type='hidden' name='estado'  value='2' >
+                                                            <input type='hidden' name='estado2'  value='$arreglo[10]' >
+                                                            <input type='hidden' name='estado3'  value='$arreglo[6]' >
+                                                            
+                                                            <button class='submit' type='submit' name='enviar' > <img src='images/bloquear.png' style='height: 30px;' class='img-rounded'> </button>
+                                                        </form>
+                                                    </td>";
                                             }
-                                            else
-                                            {
-                                                echo "<td>"Bloqueado"</td>";
-                                                /* echo "<td> <button onclick = '  " $mysqli->query("UPDATE $TABLA SET confirmacion = 1  WHERE orden = $arreglo[11] ");
-                                                                                " '> <img src='images/CO.jpeg' class='img-rounded'> </td>";
-                                                */
+                                            
+                                            else{   
+                                                echo "<td> Bloqueado </td>";
+                                                echo "<td>   
+                                                        <form action='block_unblock.php' method='post' >
+                                                            <input type='hidden' name='estado'  value='1' >
+                                                            <input type='hidden' name='estado2'  value='$arreglo[10]' >
+                                                            <input type='hidden' name='estado3'  value='$arreglo[6]' >
+                                                            
+                                                            <button class='submit' type='submit' name='enviar' > <img src='images/desbloquear.png' style='height: 30px;' class='img-rounded'> </button>
+                                                        </form>
+                                                    </td>";
                                             }
+                                            
                                     echo "</tr>";
                                 }
-
-                                echo "</table>";
+                                
+                               echo "</table>";
                             ?>        
                         </div>	
                     </div>	
                 </div>
             </div>
-        </div>             
+        </div>       
+        <!-- poner que significa cada cosa del status -->      
     </main>
     
     <footer style="position: fixed; bottom: 0;">

@@ -1,5 +1,14 @@
 <!DOCTYPE html>
 <html lang="es">
+<?php
+	session_start();
+	if ($_COOKIE['user']  ) {
+        if($_COOKIE['admin'])
+            header("Location:admin_responses.php");
+        else
+            header("Location:user_profile.php");
+	}
+?>
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -29,7 +38,8 @@
             <input type="email" name="email" placeholder="email..." required>
             <input type="password" name="contra" placeholder="Password..." required>
             <button class="submit" type="submit" name="enviar" id="registro_enviar" ><span>Send </span></button>
-            <p class="forgot"><a href="#">Forgot your password?</p>          
+            <p class="forgot"><a href="change_pass.php">Forgot your password?</p>  
+            <p class="forgot" style="padding-top: 0px"><a href="sign_up.php">You don't have an account?</p>          
         </form>
     </main>
     <footer style="position: fixed; bottom: 0;">

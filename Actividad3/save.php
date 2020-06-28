@@ -5,7 +5,6 @@ if (@!$_COOKIE['user']) {
 	header("Location:iniciar_sesion.php");
 }
 include "var.inc";
-echo "123";
 $mysqli = new mysqli($HOST, $USER, $PASS, $DB);
 	//echo '<script>alert("ID:' $_COOKIE["id"] ' ")</script> ';
 	$ID = $_COOKIE["id"];
@@ -14,8 +13,8 @@ $mysqli = new mysqli($HOST, $USER, $PASS, $DB);
 
    if($f = mysqli_fetch_assoc($result))
 		{
-			echo '<script>alert("Usted ya ha enviado un formulario. Solo se permite uno por usuario.")</script> ';
-			echo "<script>location.href='user-form.php'</script>";
+			echo '<script>alert("You have already submitted a form. Only one is allowed per user.")</script> ';
+			echo "<script>location.href='user_profile.php'</script>";
 		}
 
 	
@@ -72,5 +71,5 @@ $mysqli = new mysqli($HOST, $USER, $PASS, $DB);
 	$arrayEnfermedades ="".$_POST['enfermedades1']." ".$_POST['enfermedades2']." ".$_POST['enfermedades3']." ".$_POST['enfermedades4']."";
 	if(strcmp ($arrayEnfermedades, "   ") == 0)		$arrayEnfermedades="--";
 	$mysqli->query("insert into $TABLA2 (id, apellido, nombre, dni, domicilio, fecha_nacimien ,peso,grupo_sanguineo , factor ,altura , email , telefono_fijo, telefono_celu,	telefono_altern , talle_zapato,  medicamentos,  nro_emer, nro_obrasocial , enfermedades, color_fav, sexo ) values ('$ID',  '$apellido', '$nombre', '".$_POST['dni']."','$domicilio','".$_POST['fecha_nacimien']."' ,'".$_POST['peso']."' , '$grupo_sanguineo' , '$factor' , '".$_POST['altura']."' , '$email' , '$telefono_fijo' , '$telefono_celu' , '$telefono_altern' , '".$_POST['talle_zapato']."' , '$medicamentos' , ' $nro_emer','$nro_obrasocial' , '$arrayEnfermedades' , '$color_fav' , '$sexo' )" ); 
-
+	echo "<script>location.href='user_profile.php'</script>";
 ?>

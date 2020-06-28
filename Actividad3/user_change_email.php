@@ -4,16 +4,10 @@
             $sql = mysqli_query($mysqli,"SELECT * FROM $TABLA WHERE email = '".$_POST['email']."' " );
                 if($f = mysqli_fetch_assoc($sql))
                     {
-                        echo '<script>alert("There is already a registered user with that password")</script> ';
-                        echo "<script>location.href='index.html'</script>";
-                    }
-                    else
-                    {
-                        
                         $token = rand (1, 2000000);;
-                
-                        $mysqli->query("insert into $TABLA (nombre, contra, email, token ) values ( '".$_POST['nombre']."' , '".$_POST['contra']."' , '".$_POST['email']."', '$token' )" ); 
                         $para       =    "".$_POST['email']."";
+                        
+                        $mysqli->query("UPDATE $TABLA SET token = $token  WHERE email = '$para' ");
                         $titulo     =    'Confirmation';
                         
                         $mensaje    = "<html>
@@ -24,7 +18,7 @@
                             <div>
                                 <h2 style='color:black !important;'> Thank you for registering for Cute Data Protect.</h2>
                                 <h2 style='color:black !important;'> Confirm your account! </h2>  
-                                <a  style='font-size: 20px !important; color:#f6511d !important;' href='https://www.agssoft.ar/UNO/confirmation.php?email="  . $para . "&token=" . $token .  "&motive=0'> Haga click aqui para comenzar!</a> 
+                                <a  style='font-size: 20px !important; color:#f6511d !important;' href='https://www.agssoft.ar/UNO/confirmation.php?email="  . $para . "&token=" . $token .  "&motive=3'> Haga click aqui para comenzar!</a> 
                             </div>
                             <div style='color:black !important;'> Contact: grupoUNO@gmail.com - Group One. </div> 
                         </body>
@@ -37,5 +31,14 @@
 
                         mail($para, $titulo, $mensaje, $cabeceras);             
                         echo "<script>location.href='email_confirmation.html'</script>";                        
+
                     }
+                    else
+                    {                        
+                        echo '<script>alert("There is not user with this email")</script> ';
+                        echo "<script>location.href='change_pass.php'</script>";
+
+                    }
+
+
 ?>

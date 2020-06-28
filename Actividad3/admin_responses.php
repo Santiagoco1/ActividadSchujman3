@@ -35,7 +35,7 @@
                 </a>
             </div>
             <div class="img-container">
-                <a href="admin_user_control.html">
+                <a href="admin_user_control.php">
                     <img src="images/userControl.png" alt="">                
                     <h6>Control</h6>
                 </a>
