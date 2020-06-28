@@ -115,7 +115,7 @@
                                     echo "</tr>";
                                 }
                                 
-                                echo "</table>";
+                               echo "</table>";
                             ?>        
                         </div>	
                     </div>	
@@ -130,10 +130,5 @@
         <h3>Franco Gozzerino</h3>
         <h3>Juliana Consolati</h3>
     </footer>
-    <script>
-        function bloquear ( ID)
-        {
-
-        }
 </body>
 </html>
