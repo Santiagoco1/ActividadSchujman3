@@ -72,7 +72,7 @@
                                         echo "<td>How many times the user log in</td>";
                                         echo "<td>Last log in</td>";
                                         echo "<td>Status</td>";
-                                        echo "<td>Blocked/Unblocked</td>";
+                                        echo "<td>Block/Unblock</td>";
                                         
                                     echo "</tr>";  
                             
@@ -86,19 +86,30 @@
                                         if( $arreglo[3] == 0 )
                                             echo "<td> No confirmado </td>";
                                         else
-                                            if( $arreglo[3] == 1)
-                                            {
+                                            if( $arreglo[3] == 1){
                                                 echo "<td> Desbloqueado </td>";
-                                                /* echo "<td> <button onclick = '  " $mysqli->query("UPDATE $TABLA SET confirmacion = 2  WHERE orden = $arreglo[11] ");
-                                                                                " '> <img src='images/bloquear.png' class='img-rounded'> </td>";
-                                                */
+                                                echo "<td>   
+                                                        <form action='block_unblock.php' method='post' >
+                                                            <input type='hidden' name='estado'  value='2' >
+                                                            <input type='hidden' name='estado2'  value='$arreglo[10]' >
+                                                            <input type='hidden' name='estado3'  value='$arreglo[6]' >
+                                                            
+                                                            <button class='submit' type='submit' name='enviar' > <img src='images/bloquear.png' style='height: 30px;' class='img-rounded'> </button>
+                                                        </form>
+                                                    </td>";
                                             }
-                                            else
-                                            {
+                                            
+                                            else{   
                                                 echo "<td> Bloqueado </td>";
-                                                /* echo "<td> <button onclick = '  " $mysqli->query("UPDATE $TABLA SET confirmacion = 1  WHERE orden = $arreglo[11] ");
-                                                                                " '> <img src='desbloquear.png' class='img-rounded'> </td>";
-                                                */     
+                                                echo "<td>   
+                                                        <form action='block_unblock.php' method='post' >
+                                                            <input type='hidden' name='estado'  value='1' >
+                                                            <input type='hidden' name='estado2'  value='$arreglo[10]' >
+                                                            <input type='hidden' name='estado3'  value='$arreglo[6]' >
+                                                            
+                                                            <button class='submit' type='submit' name='enviar' > <img src='images/desbloquear.png' style='height: 30px;' class='img-rounded'> </button>
+                                                        </form>
+                                                    </td>";
                                             }
                                             
                                     echo "</tr>";
@@ -119,5 +130,10 @@
         <h3>Franco Gozzerino</h3>
         <h3>Juliana Consolati</h3>
     </footer>
+    <script>
+        function bloquear ( ID)
+        {
+
+        }
 </body>
 </html>

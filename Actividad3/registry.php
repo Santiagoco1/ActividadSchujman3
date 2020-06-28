@@ -38,6 +38,4 @@
                         mail($para, $titulo, $mensaje, $cabeceras);             
                         echo "<script>location.href='email_confirmation.html'</script>";                        
                     }
-
-
 ?>
