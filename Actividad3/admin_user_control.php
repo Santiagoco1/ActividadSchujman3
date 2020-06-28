@@ -75,7 +75,7 @@
                     echo "<td>logins</td>";
                     echo "<td>Last login</td>";
                     echo "<td>Status</td>";
-                    echo "<td>Block/Unblock</td>";
+                    echo "<td>Block</td>";
                     
                 echo "</tr>";  
         
