@@ -5,7 +5,18 @@
 	session_start();
 	if (@!$_COOKIE['user']) {
 		header("Location:sing_in.php");
-	}
+    }
+    include "var.inc";
+            $mysqli = new mysqli($HOST, $USER, $PASS, $DB);
+            $id = $_COOKIE['id'];
+            $sql = mysqli_query($mysqli,"SELECT * FROM $TABLA WHERE orden = $id " );
+            $rows3 = mysqli_fetch_assoc($sql);
+            if ($rows3["confirmacion"] == 2 )
+            {
+                echo '<script>alert("This user was banned")</script> ';
+                echo "<script>location.href='sign_out.php'</script>";
+            }
+
 ?>
 
 <head>
@@ -67,10 +78,28 @@
                         ?>
                     </div>
                     <div class="card-body">
-            <?php       
-                        echo "<h3><b>Email: </b> ". $f["email"]."</h3>";
-                        echo "<h3><b>Pass: </b> ". $f["contra"]."</h3>";
-            ?>                    
+                        <div class="email-container">
+                            <h3><b>Email: </b><?php echo $f["email"]    ?></h3>
+                            
+                            <a href="user_change_email.php" onclick = " 
+                                            <?php 
+                                                setcookie('email',$f['email']);
+                                            ?>"
+                            >
+                                <img src="images/engranaje.png" alt="ruedita">
+                            </a>
+                            
+                        </div>
+                        <div class="pass-container">
+                            <h3><b>Pass: </b><?php echo $f["contra"] ?></h3>
+                            <a href="user_change_pass.php" onclick = " 
+                                            <?php 
+                                                setcookie('email',$f['email']);
+                                            ?>"
+                            >
+                                <img src="images/engranaje.png" alt="ruedita">
+                            </a>
+                        </div>                  
                     </div>
                 </div>
             <?php

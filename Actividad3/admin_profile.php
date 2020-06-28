@@ -2,9 +2,21 @@
 <html lang="es">
 <?php
 	session_start();
-	if (@!$_COOKIE['user']  ) {
-		header("Location:iniciar_sesion.php");
-	}
+	if (@!$_COOKIE['admin']  ) {
+        header("Location:sign_in.php");
+            
+    }
+    include "var.inc";
+            $mysqli = new mysqli($HOST, $USER, $PASS, $DB);
+            $id = $_COOKIE['id'];
+            $sql = mysqli_query($mysqli,"SELECT * FROM $TABLA WHERE orden = $id " );
+            $rows3 = mysqli_fetch_assoc($sql);
+            if ($rows3["confirmacion"] == 2 )
+            {
+                echo '<script>alert("This user was banned")</script> ';
+                echo "<script>location.href='sign_out.php'</script>";
+            }
+
 ?>
 <head>
     <meta charset="UTF-8">
@@ -59,7 +71,8 @@
             $result = mysqli_query($mysqli,  "SELECT * from $TABLA WHERE orden = $ID" );
 
             
-            if ($f = mysqli_fetch_assoc($result)) {
+            if ($f = mysqli_fetch_assoc($result))
+            {
             ?>
                 <div class="card">
                     <div class="card-title">
@@ -68,17 +81,19 @@
                         ?>
                     </div>
                     <div class="card-body">
-              
-            <?php
-                echo "<h3><b>Email: </b> ". $f["email"]."</h3>";
-                echo "<h3><b>Pass: </b> ". $f["passadmin"]."</h3>";
-            ?>
+                        <div class="email-container">
+                            <h3><b>Email: </b><?php echo $f["email"] ?></h3>
+                            <a href="user_change_email.php">
+                                <img src="images/engranaje.png" alt="ruedita">
+                            </a>
+                        </div>
+                        <div class="pass-container">
+                            <h3><b>Pass: </b><?php echo $f["passadmin"] ?></h3>
+                        </div>                  
                     </div>
                 </div>
             <?php
             }
-            else 
-               echo "<h3> No hay respuestas aún ;(( </h3>";
             ?>
         </div>
     </main>

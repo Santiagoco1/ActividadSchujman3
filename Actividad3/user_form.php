@@ -5,7 +5,18 @@
 	session_start();
 	if (@!$_COOKIE['user']  ) {
 		header("Location:iniciar_sesion.php");
-	}
+    }
+    include "var.inc";
+            $mysqli = new mysqli($HOST, $USER, $PASS, $DB);
+            $id = $_COOKIE['id'];
+            $sql = mysqli_query($mysqli,"SELECT * FROM $TABLA WHERE orden = $id " );
+            $rows3 = mysqli_fetch_assoc($sql);
+            if ($rows3["confirmacion"] == 2 )
+            {
+                echo '<script>alert("This user was banned")</script> ';
+                echo "<script>location.href='sign_out.php'</script>";
+            }
+
 ?>
 
 <head>

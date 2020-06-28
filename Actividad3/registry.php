@@ -14,9 +14,9 @@
                 
                         $mysqli->query("insert into $TABLA (nombre, contra, email, token ) values ( '".$_POST['nombre']."' , '".$_POST['contra']."' , '".$_POST['email']."', '$token' )" ); 
                         $para       =    "".$_POST['email']."";
-                        $titulo     =    'Confirmation';
-                        
-                        $mensaje    = "<html>
+                        $titulo = 'Confirmate your account.';
+                
+                        $mensaje = "<html>
                         <head>
                         </head>
                         <body>
@@ -29,13 +29,14 @@
                             <div style='color:black !important;'> Contact: grupoUNO@gmail.com - Group One. </div> 
                         </body>
                         </html>";
-
                         $cabeceras =   'MIME-Version: 1.0' . "\r\n" .
-                                       'From: grupoUNO@gmail.com' . "\r\n" .
-                                       'Content-type: text/html; charset=iso-8859-1' . "\r\n" .
-                                       'X-Mailer: PHP/' . phpversion();
-
+                        'From: grupoUNO@gmail.com' . "\r\n" .
+                        'Content-type: text/html; charset=iso-8859-1' . "\r\n" .
+                        'X-Mailer: PHP/' . phpversion();
+        
                         mail($para, $titulo, $mensaje, $cabeceras);             
                         echo "<script>location.href='email_confirmation.html'</script>";                        
                     }
+
+
 ?>

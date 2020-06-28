@@ -29,7 +29,13 @@
             <a href="https://ips.edu.ar/" target="_blank">
                 <img src="images/IPS_Logo.png" alt="IPS-logo">
             </a>
-            <h1 style="color: white;">Exercise IV: The Form Strikes Back</h1>
+            <h1 style="color: white;">Exercise IV</h1>
+        </div>
+        <div class="img-container">
+            <a href="index.html">
+                <img src="images/home.png" alt="home">
+                <h6>Home</h6>
+            </a>
         </div>
     </header>
     <main>

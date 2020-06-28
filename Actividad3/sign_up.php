@@ -13,7 +13,7 @@
     <link rel="stylesheet" href="css/animations.css">
     <link rel="Shortcut Icon" href="images/dog.png">
     <script src="https://code.jquery.com/jquery-3.4.0.min.js"></script>
-    <script src="registry.js" type="text/javascript"></script>  
+    <script src="check_password.js" type="text/javascript"></script> 
 </head>
 <body>
     <header class="fadeInDown">
@@ -21,7 +21,13 @@
             <a href="https://ips.edu.ar/" target="_blank">
                 <img src="images/IPS_Logo.png" alt="IPS-logo">
             </a>
-            <h1 style="color: white;">Exercise IV: The Form Strikes Back</h1>
+            <h1 style="color: white;">Exercise IV</h1>
+        </div>
+        <div class="img-container">
+            <a href="index.html">
+                <img src="images/home.png" alt="home">
+                <h6>Home</h6>
+            </a>
         </div>
     </header>
     <main>
@@ -44,23 +50,5 @@
 		if(isset($_POST['submit']))
 			require("registry.php");
     ?>
-    
-    <script>
-            function checkPassword(form) { 
-                contra = form.contra.value; 
-                contra2 = form.contra2.value; 
-                if (contra == '') 
-                    alert ("Please enter Password"); 
-                else if (contra2 == '') 
-                    alert ("Please enter confirm password");     
-                else if (contra != contra2) { 
-                    alert ("\nPassword did not match: Please try again...") 
-                    return false; 
-                } 
-                else{ 
-                    return true; 
-                } 
-            } 
-    </script>
 </body>
 </html>
