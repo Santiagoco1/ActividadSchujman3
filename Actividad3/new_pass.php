@@ -13,6 +13,7 @@
     <link rel="stylesheet" href="css/registro.css">
     <link rel="Shortcut Icon" href="images/dog.png">
     <script src="https://code.jquery.com/jquery-3.4.0.min.js"></script>
+    <script src="check_password.js" type="text/javascript"></script>
 </head>
 <body>
     <header class="fadeInDown">
@@ -37,23 +38,5 @@
         <h3>Franco Gozzerino</h3>
         <h3>Juliana Consolati</h3>
     </footer>
-
-    <script>
-            function checkPassword(form) { 
-                contra = form.contra.value; 
-                contra2 = form.contra2.value; 
-                if (contra == '') 
-                    alert ("Please enter Password"); 
-                else if (contra2 == '') 
-                    alert ("Please enter confirm password");     
-                else if (contra != contra2) { 
-                    alert ("\nPassword did not match: Please try again...") 
-                    return false; 
-                } 
-                else{ 
-                    return true; 
-                } 
-            } 
-    </script>
 </body>
 </html>

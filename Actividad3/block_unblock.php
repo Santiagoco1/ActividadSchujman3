@@ -29,7 +29,7 @@
                 'X-Mailer: PHP/' . phpversion();
 
         mail($para, $titulo, $mensaje, $cabeceras);             
-                            
+                    
     }
     else
     {

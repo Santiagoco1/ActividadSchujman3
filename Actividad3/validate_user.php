@@ -29,9 +29,6 @@
                         $user = $f['nombre'];
                         $orden = $f['orden'];
                 
-                        /* Seteo las cookies */
-                        setcookie("user", $user );
-                        setcookie("id", $orden );
                         
                         $cuantos_logueos = $f['cuantos_logueos'] + 1 ;
                         $ultimo_logueo = date('Y-m-d H:i:s');
@@ -40,7 +37,11 @@
                         $mysqli->query("UPDATE $TABLA SET ultimo_logueo = '$ultimo_logueo' WHERE orden = '$orden' ");
                         if($pass == $f['passadmin'])
                         {
+                            /* Seteo las cookies */
+                            setcookie("user", $user );
+                            setcookie("id", $orden );
                             setcookie("admin", 1);
+                            
                             echo '<script>alert("BIENVENIDO ADMINISTRADOR")</script> ';
                             echo "<script>location.href='admin_responses.php'</script>";
                         }
@@ -48,6 +49,10 @@
                         {
                             if($pass == $f['contra'])
                             {
+                                /* Seteo las cookies */
+                                setcookie("user", $user );
+                                setcookie("id", $orden );
+                        
                                 echo "<script>location.href='user_form.php'</script>";
                             }
                             else

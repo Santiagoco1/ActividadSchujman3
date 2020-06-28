@@ -1,0 +1,31 @@
+
+.tabla_grupo {
+    border: 0.6em solid #0F2752;
+    border-collapse: collapse;
+    background-color: #13315c;
+    font-family: 'Roboto', sans-serif;
+    text-align: center;
+    margin: auto;
+    margin-top: 40px;
+    max-width: 1450px;
+    width: 90%;
+}
+
+.tabla_grupo th{
+    border: 1px solid #D3D3D3;
+    color: #FFFFFF;
+    font-size: 2em;
+}
+
+.tabla_grupo td{
+    border: 1px solid #D3D3D3;
+    color: #F8F8FF ;
+    font-size: 1.5em;
+}
+
+.table_image {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 0.4em;
+}

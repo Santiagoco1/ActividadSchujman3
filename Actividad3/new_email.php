@@ -13,6 +13,7 @@
     <link rel="stylesheet" href="css/registro.css">
     <link rel="Shortcut Icon" href="images/dog.png">
     <script src="https://code.jquery.com/jquery-3.4.0.min.js"></script>
+    <script src="check_password.js" type="text/javascript"></script>
 </head>
 <body>
     <header class="fadeInDown">
@@ -26,8 +27,8 @@
     <main>
         <p class="sign">Change your Password</p>
         <form action="true_user_change_email.php" method="post" id="register-form"  onSubmit = "return checkPassword(this)">
-            <input type="email" name="contra" id="email" placeholder="Password..." required>
-            <input type="email" name="contra2" id="email2" placeholder="Repeat Password..." required>
+            <input type="email" name="email" id="contra" placeholder="Email..." required>
+            <input type="email" name="email" id="contra2" placeholder="Repeat Email..." required>
             <button class="submit" type="submit" name="enviar" id="registro_enviar" ><span>Send </span></button>         
         </form>
     </main>
