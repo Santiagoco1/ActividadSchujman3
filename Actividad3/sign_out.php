@@ -1,5 +1,5 @@
 <?php 
-	if($_COOKIE['user'])
+if($_COOKIE['user'])
 		{
 			setcookie("user");
 			setcookie("id");
