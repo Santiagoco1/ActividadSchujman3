@@ -3,10 +3,10 @@
 <?php
 	session_start();
 	if (@!$_COOKIE['admin']  ) {
-        header("Location:sign_in.php");
+        header("Location:../sign_in.php");
             
     }
-    include "var.inc";
+    include "../var.inc";
             $mysqli = new mysqli($HOST, $USER, $PASS, $DB);
             $id = $_COOKIE['id'];
             $sql = mysqli_query($mysqli,"SELECT * FROM $TABLA WHERE orden = $id " );
@@ -14,48 +14,46 @@
             if ($rows3["confirmacion"] == 2 )
             {
                 echo '<script>alert("This user was banned")</script> ';
-                echo "<script>location.href='sign_out.php'</script>";
+                echo "<script>window.location.href='../sign_out.php'</script>";
             }
-
-    
 ?>
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Exercise IV</title>
     <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
-    <link rel="stylesheet" href="css/var.css">
-    <link rel="stylesheet" href="css/general.css">
-    <link rel="stylesheet" href="css/header.css">
-    <link rel="stylesheet" href="css/respuestas.css">
-    <link rel="stylesheet" href="css/footer.css">
-    <link rel="stylesheet" href="css/animations.css">
-    <link rel="Shortcut Icon" href="images/dog.png">
+    <link rel="stylesheet" href="../css/var.css">
+    <link rel="stylesheet" href="../css/general.css">
+    <link rel="stylesheet" href="../css/header.css">
+    <link rel="stylesheet" href="../css/respuestas.css">
+    <link rel="stylesheet" href="../css/footer.css">
+    <link rel="stylesheet" href="../css/animations.css">
+    <link rel="Shortcut Icon" href="../images/dog.png">
 </head>
 <body>
     <header class="fadeInDown">
         <div class="title-container">
             <a href="https://ips.edu.ar/" target="_blank">
-                <img src="images/IPS_Logo.png" alt="IPS-logo">
+                <img src="../images/IPS_Logo.png" alt="IPS-logo">
             </a>
             <h1 style="color: white;">Users Responses</h1>
         </div> 
         <div class="links">
             <div class="img-container">
                 <a href="admin_profile.php">
-                    <img src="images/profile.png" alt="respuestas">
+                    <img src="../images/profile.png" alt="respuestas">
                     <h6>Profile</h6>
                 </a>
             </div>
             <div class="img-container">
                 <a href="admin_user_control.php">
-                    <img src="images/userControl.png" alt="">                
+                    <img src="../images/userControl.png" alt="">                
                     <h6>Control</h6>
                 </a>
             </div>
             <div class="img-container">
-                <a href="sign_out.php">
-                    <img src="images/logOut.png" alt="actividad1">
+                <a href="../sign_out.php">
+                    <img src="../images/logOut.png" alt="actividad1">
                     <h6>Log Out</h6>
                 </a>
             </div>
@@ -65,17 +63,22 @@
         <div class="cards-container">
             <?php
 
-            include "var.inc";
+            include "../var.inc";
             $conn = new mysqli($HOST, $USER, $PASS, $DB); 
-            $result = $conn -> query( "SELECT * from $TABLA2 " );
-
+            $conn2 = new mysqli($HOST, $USER, $PASS, $DB); 
+            
+            $result = $conn -> query( "SELECT *  from $TABLA2" );
+                   
             if ($result ->num_rows > 0) {
                 while ( $rows = mysqli_fetch_assoc($result) ) {
                     ?>
                         <div class="card">
                             <div class="card-title">
                                 <?php
-                                    echo "<h1>User ". $rows["id"]."</h1>";
+                                    $id =$rows['id']
+                                    $result2 = $conn2 -> query( "SELECT nombre from $TABLA WHERE orden = $id" );
+                                    if($rows2 = mysqli_fetch_assoc($result2))
+                                        echo "<h1>User ". $rows2['nombre']."</h1>";
                                 ?>
                             </div>
                             <div class="card-body">

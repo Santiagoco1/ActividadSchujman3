@@ -1,3 +1,12 @@
+<link rel="stylesheet" href="css/loader">
+<div class="background">
+    <div class="loader"></div>
+</div>
+<script type="text/javascript">
+        $(window).load(function() {
+        $(".loader").fadeOut("slow");
+    });
+</script>
 <?php          
     session_start();
     include "var.inc";
@@ -13,16 +22,16 @@
                 $confirmacion = $f['confirmacion'];
                 if( $confirmacion == 0)    
                 {
-                    echo '<script>alert("Este usuario no ha confirmado el mail. Por favor confirmelo")</script> ';
-                    echo "<script>location.href='sign_in.php'</script>";
+                    echo '<script>alert("This user has not confirmed the email. Please confirm")</script> ';
+                    echo "<script>window.location.href='sign_in.php'</script>";
   
                 }
                 else
                 {
                     if ($confirmacion == 2)
                     { 
-                        echo '<script>alert("Este usuario ha sido bloqueado")</script> ';
-                        echo "<script>location.href='sign_in.php'</script>";
+                        echo '<script>alert("This user has been blocked")</script> ';
+                        echo "<script>window.location.href='sign_in.php'</script>";
                     }
                     else
                     {
@@ -42,8 +51,8 @@
                             setcookie("id", $orden );
                             setcookie("admin", 1);
                             
-                            echo '<script>alert("BIENVENIDO ADMINISTRADOR")</script> ';
-                            echo "<script>location.href='admin_responses.php'</script>";
+                            echo '<script>alert("WELCOME ADMINISTRATOR")</script> ';
+                            echo "<script>window.location.href='admin/admin_responses.php'</script>";
                         }
                         else 
                         {
@@ -53,12 +62,12 @@
                                 setcookie("user", $user );
                                 setcookie("id", $orden );
                         
-                                echo "<script>location.href='user_form.php'</script>";
+                                echo "<script>window.location.href='user/user_form.php'</script>";
                             }
                             else
                             {
-                                echo '<script>alert("CONTRASEÑA INCORRECTA")</script> ';
-                                echo "<script>location.href='sign_in.php'</script>";
+                                echo '<script>alert("INCORRECT PASSWORD")</script> ';
+                                echo "<script>window.location.href='sign_in.php'</script>";
                             }
                         }
         
@@ -67,7 +76,7 @@
             }    
             else
             {
-                echo '<script>alert("ESTE USUARIO NO EXISTE, PORFAVOR REGISTRESE PARA PODER INGRESAR")</script> ';   
-                echo "<script>location.href='sign_in.php'</script>";	
+                echo '<script>alert("THIS USER DOES NOT EXIST, PLEASE REGISTER TO ENTER")</script> ';   
+                echo "<script>window.location.href='sign_in.php'</script>";	
             }
 ?>

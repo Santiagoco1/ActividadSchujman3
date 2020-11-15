@@ -1,9 +1,18 @@
+<link rel="stylesheet" href="../../css/loader">
+<div class="background">
+    <div class="loader"></div>
+</div>
+<script type="text/javascript">
+        $(window).load(function() {
+        $(".loader").fadeOut("slow");
+    });
+</script>
 <?php
     session_start();
     if (@!$_COOKIE['user']) {
-        header("Location:sing_in.php");
+        header("Location:../../sing_in.php");
     }
-    include "var.inc";
+    include "../../var.inc";
     
         $mysqli = new mysqli($HOST, $USER, $PASS, $DB);
         $id = $_COOKIE['id'];
@@ -12,13 +21,12 @@
         if ($rows["confirmacion"] == 2 )
         {
             echo '<script>alert("This user was banned")</script> ';
-            echo "<script>location.href='sign_out.php'</script>";
+            echo "<script>window.location.href='../../sign_out.php'</script>";
         }
 
 
                 $para       =    $_COOKIE['email'];
-                echo '<script>alert("'. $para .'")</script> ';
-            
+                echo '<script> alert("'. $para. '")</script>';
             $sql = mysqli_query($mysqli,"SELECT * FROM $TABLA WHERE email = '$para' " );
                 if($f = mysqli_fetch_assoc($sql))
                     {
@@ -35,7 +43,7 @@
                             <h1 style='color:black !important;'> Confirmation change email</h1>
                             <div>
                                 <h2 style='color:black !important;'> Confirm hte change of the email! </h2>  
-                                <a  style='font-size: 20px !important; color:#f6511d !important;' href='https://www.agssoft.ar/UNO/confirmation.php?email="  . $para . "&token=" . $token .  "&motive=3'> Haga click aqui para comenzar!</a> 
+                                <a  style='font-size: 20px !important; color:#f6511d !important;' href='https://www.agssoft.ar/UNO/user/confirmation.php?email="  . $para . "&token=" . $token .  "&motive=3'> Haga click aqui para comenzar!</a> 
                             </div>
                             <div style='color:black !important;'> Contact: grupoUNO@gmail.com - Group One. </div> 
                         </body>
@@ -46,13 +54,13 @@
                         'X-Mailer: PHP/' . phpversion();
         
                         mail($para, $titulo, $mensaje, $cabeceras);             
-                        echo "<script>location.href='email_confirmation.html'</script>";                        
+                        echo "<script>window.location.href='../../email_confirmation.html'</script>";                        
 
                     }
                     else
                     {                        
                         echo '<script>alert("There is not user with this email")</script> ';
-                        echo "<script>location.href='change_pass.php'</script>";
+                        echo "<script>window.location.href='../change_pass/change_pass.php'</script>";
 
                     }
 

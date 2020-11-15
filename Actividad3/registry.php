@@ -1,3 +1,14 @@
+
+<link rel="stylesheet" href="css/loader">
+<div class="background">
+    <div class="loader"></div>
+</div>
+<script type="text/javascript">
+        $(window).load(function() {
+        $(".loader").fadeOut("slow");
+    });
+</script>
+
 <?php
     include "var.inc";
             $mysqli = new mysqli($HOST, $USER, $PASS, $DB);
@@ -5,8 +16,17 @@
                 if($f = mysqli_fetch_assoc($sql))
                     {
                         echo '<script>alert("There is already a registered user with that password")</script> ';
-                        echo "<script>location.href='index.html'</script>";
+                        echo "<script>location.href='sign_up.php'</script>";
                     }
+                else 
+                {
+                    $sql = mysqli_query($mysqli,"SELECT * FROM $TABLA WHERE nombre = '".$_POST['nombre']."' " );
+                    if($f = mysqli_fetch_assoc($sql))
+                        {
+                            echo '<script>alert("There is already a registered user with that name")</script> ';
+                            echo "<script>location.href='sign_up.php'</script>";
+                        }
+                
                     else
                     {
                         
@@ -24,7 +44,7 @@
                             <div>
                                 <h2 style='color:black !important;'> Thank you for registering for Cute Data Protect.</h2>
                                 <h2 style='color:black !important;'> Confirm your account! </h2>  
-                                <a  style='font-size: 20px !important; color:#f6511d !important;' href='https://www.agssoft.ar/UNO/confirmation.php?email="  . $para . "&token=" . $token .  "&motive=0'> Haga click aqui para comenzar!</a> 
+                                <a  style='font-size: 20px !important; color:#f6511d !important;' href='https://www.agssoft.ar/UNO/user/confirmation.php?email="  . $para . "&token=" . $token .  "&motive=0'> Haga click aqui para comenzar!</a> 
                             </div>
                             <div style='color:black !important;'> Contact: grupoUNO@gmail.com - Group One. </div> 
                         </body>
@@ -37,6 +57,6 @@
                         mail($para, $titulo, $mensaje, $cabeceras);             
                         echo "<script>location.href='email_confirmation.html'</script>";                        
                     }
-
+                }
 
 ?>

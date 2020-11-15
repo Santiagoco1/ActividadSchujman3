@@ -1,13 +1,13 @@
 $(document).ready(function () {
     const allRanges = document.querySelectorAll(".range-wrap");
     allRanges.forEach(wrap => {
-    const range = wrap.querySelector(".range");
-    const bubble = wrap.querySelector(".bubble");
+        const range = wrap.querySelector(".range");
+        const bubble = wrap.querySelector(".bubble");
 
-    range.addEventListener("input", () => {
+        range.addEventListener("input", () => {
+            setBubble(range, bubble);
+        });
         setBubble(range, bubble);
-    });
-    setBubble(range, bubble);
     });
 
     function setBubble(range, bubble) {
@@ -17,8 +17,9 @@ $(document).ready(function () {
     const newVal = Number(((val - min) * 100) / (max - min));
     bubble.innerHTML = val;
     // Sorta magic numbers based on size of the native UI thumb
-    bubble.style.left = `calc(${newVal}% - (${8 - newVal * 0.15}px))`;
+    bubble.style.left = 'calc(${newVal}% - (${8 - newVal * 0.15}px))';
     }
+
 });
 
 function bloqueo(resp){
@@ -35,11 +36,3 @@ function desbloqueo(resp){
         respuesta.style.opacity= "1";
         respuesta.style.overflow = "visible";       
 }
-
-$(document).ready(function () {
-    $("#registro").submit(function (e) {
-        e.preventDefault();
-        $("#registro_enviar").attr("disabled", true);
-        return true;
-    });
-});

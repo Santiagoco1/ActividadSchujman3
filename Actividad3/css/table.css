@@ -1,31 +1,78 @@
 
+main{
+    margin-bottom: 30px;
+}
+
 .tabla_grupo {
-    border: 0.6em solid #0F2752;
+    border: 5px solid #0F2752;
     border-collapse: collapse;
     background-color: #13315c;
     font-family: 'Roboto', sans-serif;
     text-align: center;
     margin: auto;
     margin-top: 40px;
-    max-width: 1450px;
-    width: 90%;
 }
 
 .tabla_grupo th{
     border: 1px solid #D3D3D3;
     color: #FFFFFF;
-    font-size: 2em;
+    font-size: 25px;
+    padding: 0 10px;
+    height: 60px;
 }
 
 .tabla_grupo td{
     border: 1px solid #D3D3D3;
     color: #F8F8FF ;
-    font-size: 1.5em;
+    font-size: 20px;
+    padding: 0 10px;
+    height: 60px;
 }
 
-.table_image {
-    display: block;
-    margin-left: auto;
-    margin-right: auto;
-    padding: 0.4em;
+.tabla_grupo button{
+    border: 0;
+    padding: 0;
+    width: 70px;
+    height: 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: linear-gradient(to right, var(--orange-color), #f58d47);
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.tabla_grupo img {
+    width: 30px;
+    height: auto;
+    color: white;
+}
+
+@media (max-width: 750px){
+    .tabla_grupo th{
+        font-size: 20px;
+        padding: 0 5px;
+    }
+    .tabla_grupo td{
+        font-size: 15px;
+        padding: 0 5px;
+    }
+    .tabla_grupo button{
+        width: 40px;
+        margin: 0 auto;
+    }
+}
+
+@media (max-width: 460px){
+    .tabla_grupo th{
+        font-size: 17.5px;
+        padding: 0 5px;
+    }
+    .tabla_grupo td{
+        font-size: 12.5px;
+        padding: 0 5px;
+    }
+    .tabla_grupo button{
+        width: 40px;
+    }
 }

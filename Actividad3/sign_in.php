@@ -4,9 +4,9 @@
 	session_start();
 	if ($_COOKIE['user']  ) {
         if($_COOKIE['admin'])
-            header("Location:admin_responses.php");
+            header("Location:admin/admin_responses.php");
         else
-            header("Location:user_profile.php");
+            header("Location:user/user_profile.php");
 	}
 ?>
 <head>
@@ -44,7 +44,7 @@
             <input type="email" name="email" placeholder="email..." required>
             <input type="password" name="contra" placeholder="Password..." required>
             <button class="submit" type="submit" name="enviar" id="registro_enviar" ><span>Send </span></button>
-            <p class="forgot"><a href="change_pass.php">Forgot your password?</p>  
+            <p class="forgot"><a href="user/change_pass/change_pass.php">Forgot your password?</p>  
             <p class="forgot" style="padding-top: 0px"><a href="sign_up.php">You don't have an account?</p>          
         </form>
     </main>

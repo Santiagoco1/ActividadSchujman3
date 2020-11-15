@@ -14,6 +14,8 @@
     <link rel="Shortcut Icon" href="images/dog.png">
     <script src="https://code.jquery.com/jquery-3.4.0.min.js"></script>
     <script src="check_password.js" type="text/javascript"></script> 
+   <!-- <script src="registry.js" type="text/javascript"></script> -->
+
 </head>
 <body>
     <header class="fadeInDown">
@@ -37,7 +39,7 @@
             <input type="password" name="contra" id="contra" placeholder="Password..." required>
             <input type="password" name="contra2" id="contra2" placeholder="Repeat Password..." required>
             <input type="email" name="email" placeholder="Email..." required> 
-            <button class="submit" type="submit" name="enviar" id="registro_enviar" ><span>Send </span></button>
+            <button class="submit" type="submit" name="enviar" id="registro_enviar"  ><span>Send </span></button>
             <p class="forgot"><a href="sign_in.php">Do you already have an account?</p>          
         </form>
     </main>
@@ -46,9 +48,6 @@
         <h3>Franco Gozzerino</h3>
         <h3>Juliana Consolati</h3>
     </footer>
-    <?php
-		if(isset($_POST['submit']))
-			require("registry.php");
-    ?>
+   
 </body>
 </html>
